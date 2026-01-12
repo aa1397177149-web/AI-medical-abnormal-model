@@ -1,0 +1,167 @@
+nohup: ignoring input
+2026-01-02 02:08:42,926 - MedicalAI-Backend - INFO - 加载 Tokenizer: trueto/medbert-base-wwm-chinese
+2026-01-02 02:08:44,371 - MedicalAI-Backend - INFO - 初始化模型结构
+2026-01-02 02:08:45,665 - MedicalAI-Backend - INFO - 加载模型权重: /root/medical/best_medical_model.pth
+2026-01-02 02:08:46,319 - MedicalAI-Backend - INFO - 模型加载成功! 设备: cuda
+2026-01-02 02:08:46,320 - MedicalAI-Backend - INFO - ==================================================
+2026-01-02 02:08:46,321 - MedicalAI-Backend - INFO - 服务启动配置:
+2026-01-02 02:08:46,321 - MedicalAI-Backend - INFO -   - 监听地址: 0.0.0.0:6006
+2026-01-02 02:08:46,321 - MedicalAI-Backend - INFO -   - 设备: cuda
+2026-01-02 02:08:46,321 - MedicalAI-Backend - INFO -   - CORS: 已启用 (允许所有来源)
+2026-01-02 02:08:46,321 - MedicalAI-Backend - INFO - ==================================================
+ * Serving Flask app 'app'
+ * Debug mode: off
+Address already in use
+Port 6006 is in use by another program. Either identify and stop that program, or start the server with a different port.
+2026-01-02 23:44:57,178 - MedicalAI-Backend - INFO - 加载 Tokenizer: trueto/medbert-base-wwm-chinese
+2026-01-02 23:44:59,645 - MedicalAI-Backend - INFO - 初始化模型结构
+2026-01-02 23:45:00,870 - MedicalAI-Backend - ERROR - 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-02 23:45:00,870 - MedicalAI-Backend - CRITICAL - 模型加载失败，服务无法启动: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-02 23:45:24,395 - MedicalAI-Backend - INFO - 加载 Tokenizer: trueto/medbert-base-wwm-chinese
+2026-01-02 23:45:27,163 - MedicalAI-Backend - INFO - 初始化模型结构
+2026-01-02 23:45:31,307 - MedicalAI-Backend - INFO - 加载模型权重: /root/medical/best_medical_model.pth
+2026-01-02 23:45:31,996 - MedicalAI-Backend - INFO - 模型加载成功! 设备: cuda
+2026-01-02 23:45:31,998 - MedicalAI-Backend - INFO - ==================================================
+2026-01-02 23:45:31,998 - MedicalAI-Backend - INFO - 服务启动配置:
+2026-01-02 23:45:31,998 - MedicalAI-Backend - INFO -   - 监听地址: 0.0.0.0:6006
+2026-01-02 23:45:31,998 - MedicalAI-Backend - INFO -   - 设备: cuda
+2026-01-02 23:45:31,998 - MedicalAI-Backend - INFO -   - CORS: 已启用 (允许所有来源)
+2026-01-02 23:45:31,998 - MedicalAI-Backend - INFO - ==================================================
+2026-01-02 23:45:32,013 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:6006
+ * Running on http://172.17.0.5:6006
+2026-01-02 23:45:32,013 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-02 23:48:02,556 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:48:02] "GET /api/health HTTP/1.1" 200 -
+2026-01-02 23:51:08,244 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:51:08] "GET /api/health HTTP/1.1" 200 -
+2026-01-02 23:51:08,342 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:51:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-02 23:51:10,743 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:51:10] "GET / HTTP/1.1" 200 -
+2026-01-02 23:51:10,940 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:51:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-02 23:52:40,379 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:40] "OPTIONS /api/health HTTP/1.1" 200 -
+2026-01-02 23:52:40,439 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:40] "GET /api/health HTTP/1.1" 200 -
+2026-01-02 23:52:57,288 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "OPTIONS /api/health HTTP/1.1" 200 -
+2026-01-02 23:52:57,341 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "GET /api/health HTTP/1.1" 200 -
+2026-01-02 23:52:57,400 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "OPTIONS /api/predict HTTP/1.1" 200 -
+2026-01-02 23:52:57,455 - MedicalAI-Backend - INFO - 收到预测请求: 脂肪肝肝内低回声区（血管瘤？）胆、胰、脾、双肾声像图未见明显异常...
+2026-01-02 23:52:57,682 - MedicalAI-Backend - INFO - 预测完成 | 耗时: 226.39ms | 结果: review
+2026-01-02 23:52:57,683 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "POST /api/predict HTTP/1.1" 200 -
+2026-01-02 23:52:57,740 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "OPTIONS /api/predict HTTP/1.1" 200 -
+2026-01-02 23:52:57,794 - MedicalAI-Backend - INFO - 收到预测请求: 胸部摄片未见明显异常影像征象。...
+2026-01-02 23:52:57,801 - MedicalAI-Backend - INFO - 预测完成 | 耗时: 6.45ms | 结果: normal
+2026-01-02 23:52:57,801 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "POST /api/predict HTTP/1.1" 200 -
+2026-01-02 23:52:57,858 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "OPTIONS /api/predict HTTP/1.1" 200 -
+2026-01-02 23:52:57,912 - MedicalAI-Backend - INFO - 收到预测请求: 1.窦性心律
+2.正常范围心电图...
+2026-01-02 23:52:57,919 - MedicalAI-Backend - INFO - 预测完成 | 耗时: 6.79ms | 结果: normal
+2026-01-02 23:52:57,919 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "POST /api/predict HTTP/1.1" 200 -
+2026-01-02 23:52:57,974 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:57] "OPTIONS /api/predict HTTP/1.1" 200 -
+2026-01-02 23:52:58,029 - MedicalAI-Backend - INFO - 收到预测请求: 脂肪肝肝内低回声区（血管瘤？）胆、胰、脾、双肾声像图未见明显异常...
+2026-01-02 23:52:58,038 - MedicalAI-Backend - INFO - 预测完成 | 耗时: 8.04ms | 结果: review
+2026-01-02 23:52:58,038 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:52:58] "POST /api/predict HTTP/1.1" 200 -
+2026-01-02 23:53:10,677 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:53:10] "OPTIONS /api/health HTTP/1.1" 200 -
+2026-01-02 23:53:10,748 - werkzeug - INFO - 127.0.0.1 - - [02/Jan/2026 23:53:10] "GET /api/health HTTP/1.1" 200 -
+2026-01-03 00:19:35 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 00:19:40 - MedicalAI-Backend - ERROR - ✗ 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-03 00:19:40 - MedicalAI-Backend - CRITICAL - 启动失败: 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-03 00:20:03 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 00:20:07 - MedicalAI-Backend - INFO - ✓ 模型权重加载成功
+2026-01-03 00:20:07 - MedicalAI-Backend - INFO - ✓ 模型服务就绪! 设备: cuda
+2026-01-03 00:20:07 - MedicalAI-Backend - INFO - 服务启动在: 0.0.0.0:6006
+2026-01-03 00:23:26 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 00:23:32 - MedicalAI-Backend - INFO - ✓ 模型权重加载成功
+2026-01-03 00:23:32 - MedicalAI-Backend - INFO - ✓ 模型服务就绪! 设备: cuda
+2026-01-03 00:23:32 - MedicalAI-Backend - INFO - 服务启动在: 0.0.0.0:6006
+2026-01-03 00:26:36 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 00:26:45 - MedicalAI-Backend - INFO - ✓ 模型权重加载成功
+2026-01-03 00:26:45 - MedicalAI-Backend - INFO - ✓ 模型服务就绪! 设备: cuda
+2026-01-03 00:26:45 - MedicalAI-Backend - INFO - 服务启动在: 0.0.0.0:6006
+2026-01-03 00:33:53 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 00:33:58 - MedicalAI-Backend - INFO - ✓ 模型权重加载成功
+2026-01-03 00:33:59 - MedicalAI-Backend - INFO - ✓ 模型服务就绪! 设备: cuda
+2026-01-03 00:33:59 - MedicalAI-Backend - INFO - 服务启动在: 0.0.0.0:6006
+2026-01-03 00:33:59 - MedicalAI-Backend - INFO - 访问地址: http://127.0.0.1:6006
+2026-01-03 00:33:59 - MedicalAI-Backend - INFO - 外部访问: http://服务器IP:6006
+2026-01-03 00:47:53 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 00:48:00 - MedicalAI-Backend - INFO - ✓ 模型权重加载成功
+2026-01-03 00:48:00 - MedicalAI-Backend - INFO - ✓ 模型服务就绪! 设备: cuda
+2026-01-03 00:48:00 - MedicalAI-Backend - INFO - 服务启动在: 0.0.0.0:6006
+2026-01-03 00:48:00 - MedicalAI-Backend - INFO - 访问地址: http://127.0.0.1:6006
+2026-01-03 00:48:00 - MedicalAI-Backend - INFO - 外部访问: http://服务器IP:6006
+2026-01-03 00:48:00 - MedicalAI-Backend - INFO - Ollama服务: http://localhost:11434
+2026-01-03 00:48:00 - MedicalAI-Backend - INFO - 模型路径: best_medical_model.pth
+2026-01-03 00:52:16 - MedicalAI-Backend - INFO - 转发Ollama请求: model=qwen2.5:7b, prompt_length=2455
+2026-01-03 00:52:16 - MedicalAI-Backend - ERROR - Ollama请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 00:52:16 - MedicalAI-Backend - ERROR - 服务异常: Ollama服务请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 00:52:22 - MedicalAI-Backend - INFO - 转发Ollama请求: model=qwen2.5:7b, prompt_length=2455
+2026-01-03 00:52:22 - MedicalAI-Backend - ERROR - Ollama请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 00:52:22 - MedicalAI-Backend - ERROR - 服务异常: Ollama服务请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 00:54:39 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 00:54:44 - MedicalAI-Backend - INFO - ✓ 模型权重加载成功
+2026-01-03 00:54:44 - MedicalAI-Backend - INFO - ✓ 模型服务就绪! 设备: cuda
+2026-01-03 00:54:44 - MedicalAI-Backend - INFO - 服务启动在: 0.0.0.0:6006
+2026-01-03 00:54:44 - MedicalAI-Backend - INFO - 访问地址: http://127.0.0.1:6006
+2026-01-03 00:54:44 - MedicalAI-Backend - INFO - 外部访问: http://服务器IP:6006
+2026-01-03 00:54:44 - MedicalAI-Backend - INFO - Ollama服务: http://localhost:11434
+2026-01-03 00:54:44 - MedicalAI-Backend - INFO - 模型路径: best_medical_model.pth
+2026-01-03 00:54:59 - MedicalAI-Backend - INFO - 转发Ollama请求: model=qwen2.5:7b, prompt_length=229
+2026-01-03 00:54:59 - MedicalAI-Backend - ERROR - Ollama请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 00:54:59 - MedicalAI-Backend - ERROR - 服务异常: Ollama服务请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 00:56:55 - MedicalAI-Backend - INFO - 转发Ollama请求: model=qwen2.5:7b, prompt_length=481
+2026-01-03 00:56:55 - MedicalAI-Backend - ERROR - Ollama请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 00:56:55 - MedicalAI-Backend - ERROR - 服务异常: Ollama服务请求失败: 404 Client Error: Not Found for url: http://localhost:11434/api/generate
+2026-01-03 23:21:50 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 23:23:58 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 23:24:02 - MedicalAI-Backend - ERROR - ✗ 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-03 23:24:02 - MedicalAI-Backend - CRITICAL - 启动失败: 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-03 23:24:02 - MedicalAI-Backend - CRITICAL - Traceback (most recent call last):
+  File "/root/medical/app.py", line 193, in _load_resources
+    self.model = MedicalBertClassifier(config.BERT_MODEL_NAME, num_classes=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/medical/app.py", line 151, in __init__
+    self.bert = BertModel.from_pretrained(bert_model_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/medical/app.py", line 488, in <module>
+    flask_app.initialize_model()
+  File "/root/medical/app.py", line 468, in initialize_model
+    self.model_service = ModelService()
+                         ^^^^^^^^^^^^^^
+  File "/root/medical/app.py", line 185, in __init__
+    self._load_resources()
+  File "/root/medical/app.py", line 211, in _load_resources
+    raise ModelException(f"模型加载失败: {str(e)}")
+ModelException: 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+2026-01-03 23:24:32 - MedicalAI-Backend - INFO - 开始加载模型资源...
+2026-01-03 23:24:36 - MedicalAI-Backend - INFO - ✓ 模型权重加载成功
+2026-01-03 23:24:37 - MedicalAI-Backend - INFO - ✓ 模型服务就绪! 设备: cuda
+2026-01-03 23:24:37 - MedicalAI-Backend - INFO - 服务启动在: 0.0.0.0:6006
+2026-01-03 23:24:37 - MedicalAI-Backend - INFO - 访问地址: http://127.0.0.1:6006
+2026-01-03 23:24:37 - MedicalAI-Backend - INFO - 外部访问: http://服务器IP:6006
+2026-01-03 23:24:37 - MedicalAI-Backend - INFO - Ollama服务: http://localhost:11434
+2026-01-03 23:24:37 - MedicalAI-Backend - INFO - 模型路径: best_medical_model.pth

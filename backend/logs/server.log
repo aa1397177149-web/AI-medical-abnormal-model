@@ -1,0 +1,1033 @@
+2026-01-03 23:35:08 | MedicalAI | INFO     | setup_logger:106 | 日志文件已创建: logs/server.log
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:505 | 初始化Ollama代理: http://localhost:11434
+2026-01-03 23:35:08 | MedicalAI | INFO     | _setup_cors:646 | CORS配置完成
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:625 | Flask应用初始化完成
+2026-01-03 23:35:08 | MedicalAI | INFO     | initialize_model:847 | 开始初始化模型服务...
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:278 | ============================================================
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:279 | 初始化模型服务
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:280 | ============================================================
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:283 | 使用设备: cuda
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:286 | GPU信息: NVIDIA GeForce RTX 4090 D
+2026-01-03 23:35:08 | MedicalAI | INFO     | __init__:287 | GPU内存: 23.64 GB
+2026-01-03 23:35:08 | MedicalAI | INFO     | _load_resources:306 | 加载Tokenizer: trueto/medbert-base-wwm-chinese
+2026-01-03 23:35:11 | MedicalAI | INFO     | _load_resources:308 | ✓ Tokenizer加载成功, 词表大小: 21128
+2026-01-03 23:35:11 | MedicalAI | INFO     | _load_resources:311 | 初始化模型结构
+2026-01-03 23:35:11 | MedicalAI | INFO     | __init__:241 | 初始化BERT模型: trueto/medbert-base-wwm-chinese
+2026-01-03 23:35:13 | MedicalAI | INFO     | __init__:248 | 模型结构初始化完成
+2026-01-03 23:35:13 | MedicalAI | INFO     | _load_resources:316 | 加载模型权重: best_medical_model.pth
+2026-01-03 23:35:13 | MedicalAI | INFO     | _load_resources:328 | ✓ 模型权重加载成功
+2026-01-03 23:35:13 | MedicalAI | INFO     | _load_resources:338 | ✓ 模型加载完成! 耗时: 5.20秒
+2026-01-03 23:35:13 | MedicalAI | INFO     | _warmup:351 | 执行模型预热...
+2026-01-03 23:35:13 | MedicalAI | INFO     | _warmup:354 | ✓ 模型预热完成
+2026-01-03 23:35:13 | MedicalAI | INFO     | __init__:298 | 模型服务初始化完成
+2026-01-03 23:35:13 | MedicalAI | INFO     | initialize_model:849 | 模型服务初始化成功
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:853 | ============================================================
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:854 | 医疗AI后端服务启动
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:855 | ============================================================
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:856 | 监听地址: 0.0.0.0:6006
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:857 | 本地访问: http://127.0.0.1:6006
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:858 | 外部访问: http://服务器IP:6006
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:859 | Ollama服务: http://localhost:11434
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:860 | 模型路径: best_medical_model.pth
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:861 | 调试模式: False
+2026-01-03 23:35:13 | MedicalAI | INFO     | run:862 | ============================================================
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:187 | [1767454635330-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:189 | [1767454635330-139636122853888] 请求成功
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:187 | [1767454635526-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:189 | [1767454635526-139636122853888] 请求成功
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:187 | [1767454635709-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:189 | [1767454635709-139636122853888] 请求成功
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:187 | [1767454635888-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:15 | MedicalAI | INFO     | decorated_function:189 | [1767454635888-139636122853888] 请求成功
+2026-01-03 23:37:16 | MedicalAI | INFO     | decorated_function:187 | [1767454636062-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:16 | MedicalAI | INFO     | decorated_function:189 | [1767454636062-139636122853888] 请求成功
+2026-01-03 23:37:25 | MedicalAI | INFO     | decorated_function:187 | [1767454645354-139636122853888] 请求开始: POST /api/ollama/generate
+2026-01-03 23:37:25 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-03 23:37:25 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=401
+2026-01-03 23:37:29 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 492字符, 耗时: 4.30秒
+2026-01-03 23:37:29 | MedicalAI | INFO     | decorated_function:189 | [1767454645354-139636122853888] 请求成功
+2026-01-03 23:37:45 | MedicalAI | INFO     | decorated_function:187 | [1767454665817-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:45 | MedicalAI | INFO     | decorated_function:189 | [1767454665817-139636122853888] 请求成功
+2026-01-03 23:37:45 | MedicalAI | INFO     | decorated_function:187 | [1767454665994-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:189 | [1767454665994-139636122853888] 请求成功
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:187 | [1767454666167-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:189 | [1767454666167-139636122853888] 请求成功
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:187 | [1767454666348-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:189 | [1767454666348-139636122853888] 请求成功
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:187 | [1767454666520-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:189 | [1767454666520-139636122853888] 请求成功
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:187 | [1767454666696-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:189 | [1767454666696-139636122853888] 请求成功
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:187 | [1767454666866-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:46 | MedicalAI | INFO     | decorated_function:189 | [1767454666866-139636122853888] 请求成功
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:187 | [1767454667042-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:189 | [1767454667042-139636122853888] 请求成功
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:187 | [1767454667220-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:189 | [1767454667220-139636122853888] 请求成功
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:187 | [1767454667392-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:189 | [1767454667392-139636122853888] 请求成功
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:187 | [1767454667567-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:189 | [1767454667567-139636122853888] 请求成功
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:187 | [1767454667746-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:189 | [1767454667746-139636122853888] 请求成功
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:187 | [1767454667918-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:47 | MedicalAI | INFO     | decorated_function:189 | [1767454667918-139636122853888] 请求成功
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:187 | [1767454668093-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:189 | [1767454668093-139636122853888] 请求成功
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:187 | [1767454668264-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:189 | [1767454668264-139636122853888] 请求成功
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:187 | [1767454668441-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:189 | [1767454668441-139636122853888] 请求成功
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:187 | [1767454668618-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:189 | [1767454668618-139636122853888] 请求成功
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:187 | [1767454668793-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:189 | [1767454668793-139636122853888] 请求成功
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:187 | [1767454668968-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:48 | MedicalAI | INFO     | decorated_function:189 | [1767454668968-139636122853888] 请求成功
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:187 | [1767454669145-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:189 | [1767454669145-139636122853888] 请求成功
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:187 | [1767454669327-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:189 | [1767454669327-139636122853888] 请求成功
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:187 | [1767454669500-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:189 | [1767454669500-139636122853888] 请求成功
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:187 | [1767454669678-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:189 | [1767454669678-139636122853888] 请求成功
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:187 | [1767454669855-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:49 | MedicalAI | INFO     | decorated_function:189 | [1767454669855-139636122853888] 请求成功
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:187 | [1767454670034-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:189 | [1767454670034-139636122853888] 请求成功
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:187 | [1767454670216-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:189 | [1767454670216-139636122853888] 请求成功
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:187 | [1767454670395-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:189 | [1767454670395-139636122853888] 请求成功
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:187 | [1767454670575-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:189 | [1767454670575-139636122853888] 请求成功
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:187 | [1767454670755-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:189 | [1767454670755-139636122853888] 请求成功
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:187 | [1767454670936-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:50 | MedicalAI | INFO     | decorated_function:189 | [1767454670936-139636122853888] 请求成功
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:187 | [1767454671110-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:189 | [1767454671110-139636122853888] 请求成功
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:187 | [1767454671283-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:189 | [1767454671283-139636122853888] 请求成功
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:187 | [1767454671454-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:189 | [1767454671454-139636122853888] 请求成功
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:187 | [1767454671625-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:189 | [1767454671625-139636122853888] 请求成功
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:187 | [1767454671807-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:189 | [1767454671807-139636122853888] 请求成功
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:187 | [1767454671984-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:51 | MedicalAI | INFO     | decorated_function:189 | [1767454671984-139636122853888] 请求成功
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:187 | [1767454672161-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:189 | [1767454672161-139636122853888] 请求成功
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:187 | [1767454672340-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:189 | [1767454672340-139636122853888] 请求成功
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:187 | [1767454672538-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:189 | [1767454672538-139636122853888] 请求成功
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:187 | [1767454672710-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:189 | [1767454672710-139636122853888] 请求成功
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:187 | [1767454672886-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:52 | MedicalAI | INFO     | decorated_function:189 | [1767454672886-139636122853888] 请求成功
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:187 | [1767454673061-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:189 | [1767454673061-139636122853888] 请求成功
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:187 | [1767454673237-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:189 | [1767454673237-139636122853888] 请求成功
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:187 | [1767454673513-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:189 | [1767454673513-139636122853888] 请求成功
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:187 | [1767454673681-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:189 | [1767454673681-139636122853888] 请求成功
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:187 | [1767454673850-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:53 | MedicalAI | INFO     | decorated_function:189 | [1767454673850-139636122853888] 请求成功
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:187 | [1767454674048-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:189 | [1767454674048-139636122853888] 请求成功
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:187 | [1767454674213-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:189 | [1767454674213-139636122853888] 请求成功
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:187 | [1767454674374-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:189 | [1767454674374-139636122853888] 请求成功
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:187 | [1767454674545-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:189 | [1767454674545-139636122853888] 请求成功
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:187 | [1767454674713-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:37:54 | MedicalAI | INFO     | decorated_function:189 | [1767454674713-139636122853888] 请求成功
+2026-01-03 23:38:12 | MedicalAI | INFO     | decorated_function:187 | [1767454692235-139636122853888] 请求开始: POST /api/ollama/generate
+2026-01-03 23:38:12 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-03 23:38:12 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=2375
+2026-01-03 23:38:16 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 783字符, 耗时: 4.00秒
+2026-01-03 23:38:16 | MedicalAI | INFO     | decorated_function:189 | [1767454692235-139636122853888] 请求成功
+2026-01-03 23:39:00 | MedicalAI | INFO     | decorated_function:187 | [1767454740974-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:00 | MedicalAI | INFO     | decorated_function:189 | [1767454740974-139636122853888] 请求成功
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:187 | [1767454741152-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:189 | [1767454741152-139636122853888] 请求成功
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:187 | [1767454741327-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:189 | [1767454741327-139636122853888] 请求成功
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:187 | [1767454741497-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:189 | [1767454741497-139636122853888] 请求成功
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:187 | [1767454741674-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:189 | [1767454741674-139636122853888] 请求成功
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:187 | [1767454741865-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:01 | MedicalAI | INFO     | decorated_function:189 | [1767454741865-139636122853888] 请求成功
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:187 | [1767454742090-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:189 | [1767454742090-139636122853888] 请求成功
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:187 | [1767454742275-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:189 | [1767454742275-139636122853888] 请求成功
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:187 | [1767454742461-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:189 | [1767454742461-139636122853888] 请求成功
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:187 | [1767454742621-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:189 | [1767454742621-139636122853888] 请求成功
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:187 | [1767454742786-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:189 | [1767454742786-139636122853888] 请求成功
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:187 | [1767454742956-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:02 | MedicalAI | INFO     | decorated_function:189 | [1767454742956-139636122853888] 请求成功
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:187 | [1767454743124-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:189 | [1767454743124-139636122853888] 请求成功
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:187 | [1767454743288-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:189 | [1767454743288-139636122853888] 请求成功
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:187 | [1767454743454-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:189 | [1767454743454-139636122853888] 请求成功
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:187 | [1767454743618-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:189 | [1767454743618-139636122853888] 请求成功
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:187 | [1767454743782-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:189 | [1767454743782-139636122853888] 请求成功
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:187 | [1767454743951-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:03 | MedicalAI | INFO     | decorated_function:189 | [1767454743951-139636122853888] 请求成功
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:187 | [1767454744119-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:189 | [1767454744119-139636122853888] 请求成功
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:187 | [1767454744287-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:189 | [1767454744287-139636122853888] 请求成功
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:187 | [1767454744459-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:189 | [1767454744459-139636122853888] 请求成功
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:187 | [1767454744620-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:189 | [1767454744620-139636122853888] 请求成功
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:187 | [1767454744786-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:189 | [1767454744786-139636122853888] 请求成功
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:187 | [1767454744954-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:04 | MedicalAI | INFO     | decorated_function:189 | [1767454744954-139636122853888] 请求成功
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:187 | [1767454745122-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:189 | [1767454745122-139636122853888] 请求成功
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:187 | [1767454745290-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:189 | [1767454745290-139636122853888] 请求成功
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:187 | [1767454745463-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:189 | [1767454745463-139636122853888] 请求成功
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:187 | [1767454745629-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:189 | [1767454745629-139636122853888] 请求成功
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:187 | [1767454745801-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:189 | [1767454745801-139636122853888] 请求成功
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:187 | [1767454745965-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:05 | MedicalAI | INFO     | decorated_function:189 | [1767454745965-139636122853888] 请求成功
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:187 | [1767454746138-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:189 | [1767454746138-139636122853888] 请求成功
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:187 | [1767454746304-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:189 | [1767454746304-139636122853888] 请求成功
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:187 | [1767454746478-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:189 | [1767454746478-139636122853888] 请求成功
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:187 | [1767454746649-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:189 | [1767454746649-139636122853888] 请求成功
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:187 | [1767454746809-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:189 | [1767454746809-139636122853888] 请求成功
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:187 | [1767454746982-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:06 | MedicalAI | INFO     | decorated_function:189 | [1767454746982-139636122853888] 请求成功
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:187 | [1767454747148-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:189 | [1767454747148-139636122853888] 请求成功
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:187 | [1767454747312-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:189 | [1767454747312-139636122853888] 请求成功
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:187 | [1767454747571-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:189 | [1767454747571-139636122853888] 请求成功
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:187 | [1767454747745-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:189 | [1767454747745-139636122853888] 请求成功
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:187 | [1767454747914-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:07 | MedicalAI | INFO     | decorated_function:189 | [1767454747914-139636122853888] 请求成功
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:187 | [1767454748080-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:189 | [1767454748080-139636122853888] 请求成功
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:187 | [1767454748245-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:189 | [1767454748245-139636122853888] 请求成功
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:187 | [1767454748410-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:189 | [1767454748410-139636122853888] 请求成功
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:187 | [1767454748575-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:189 | [1767454748575-139636122853888] 请求成功
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:187 | [1767454748743-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:189 | [1767454748743-139636122853888] 请求成功
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:187 | [1767454748915-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:08 | MedicalAI | INFO     | decorated_function:189 | [1767454748915-139636122853888] 请求成功
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:187 | [1767454749086-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:189 | [1767454749086-139636122853888] 请求成功
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:187 | [1767454749253-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:189 | [1767454749253-139636122853888] 请求成功
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:187 | [1767454749421-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:189 | [1767454749421-139636122853888] 请求成功
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:187 | [1767454749589-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:39:09 | MedicalAI | INFO     | decorated_function:189 | [1767454749589-139636122853888] 请求成功
+2026-01-03 23:41:03 | MedicalAI | INFO     | decorated_function:187 | [1767454863614-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:03 | MedicalAI | INFO     | decorated_function:189 | [1767454863614-139636122853888] 请求成功
+2026-01-03 23:41:03 | MedicalAI | INFO     | decorated_function:187 | [1767454863805-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:03 | MedicalAI | INFO     | decorated_function:189 | [1767454863805-139636122853888] 请求成功
+2026-01-03 23:41:03 | MedicalAI | INFO     | decorated_function:187 | [1767454863972-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:03 | MedicalAI | INFO     | decorated_function:189 | [1767454863972-139636122853888] 请求成功
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:187 | [1767454864139-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:189 | [1767454864139-139636122853888] 请求成功
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:187 | [1767454864313-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:189 | [1767454864313-139636122853888] 请求成功
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:187 | [1767454864508-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:189 | [1767454864508-139636122853888] 请求成功
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:187 | [1767454864743-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:189 | [1767454864743-139636122853888] 请求成功
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:187 | [1767454864919-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:04 | MedicalAI | INFO     | decorated_function:189 | [1767454864919-139636122853888] 请求成功
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:187 | [1767454865122-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:189 | [1767454865122-139636122853888] 请求成功
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:187 | [1767454865291-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:189 | [1767454865291-139636122853888] 请求成功
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:187 | [1767454865466-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:189 | [1767454865466-139636122853888] 请求成功
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:187 | [1767454865646-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:189 | [1767454865646-139636122853888] 请求成功
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:187 | [1767454865813-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:189 | [1767454865813-139636122853888] 请求成功
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:187 | [1767454865979-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:05 | MedicalAI | INFO     | decorated_function:189 | [1767454865979-139636122853888] 请求成功
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:187 | [1767454866149-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:189 | [1767454866149-139636122853888] 请求成功
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:187 | [1767454866310-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:189 | [1767454866310-139636122853888] 请求成功
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:187 | [1767454866478-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:189 | [1767454866478-139636122853888] 请求成功
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:187 | [1767454866643-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:189 | [1767454866643-139636122853888] 请求成功
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:187 | [1767454866831-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:06 | MedicalAI | INFO     | decorated_function:189 | [1767454866831-139636122853888] 请求成功
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:187 | [1767454867013-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:189 | [1767454867013-139636122853888] 请求成功
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:187 | [1767454867182-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:189 | [1767454867182-139636122853888] 请求成功
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:187 | [1767454867353-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:189 | [1767454867353-139636122853888] 请求成功
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:187 | [1767454867530-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:189 | [1767454867530-139636122853888] 请求成功
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:187 | [1767454867718-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:189 | [1767454867718-139636122853888] 请求成功
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:187 | [1767454867890-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:07 | MedicalAI | INFO     | decorated_function:189 | [1767454867890-139636122853888] 请求成功
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:187 | [1767454868132-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:189 | [1767454868132-139636122853888] 请求成功
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:187 | [1767454868305-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:189 | [1767454868305-139636122853888] 请求成功
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:187 | [1767454868478-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:189 | [1767454868478-139636122853888] 请求成功
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:187 | [1767454868643-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:189 | [1767454868643-139636122853888] 请求成功
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:187 | [1767454868812-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:189 | [1767454868812-139636122853888] 请求成功
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:187 | [1767454868974-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:08 | MedicalAI | INFO     | decorated_function:189 | [1767454868974-139636122853888] 请求成功
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:187 | [1767454869136-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:189 | [1767454869136-139636122853888] 请求成功
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:187 | [1767454869302-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:189 | [1767454869302-139636122853888] 请求成功
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:187 | [1767454869471-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:189 | [1767454869471-139636122853888] 请求成功
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:187 | [1767454869654-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:189 | [1767454869654-139636122853888] 请求成功
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:187 | [1767454869933-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:09 | MedicalAI | INFO     | decorated_function:189 | [1767454869933-139636122853888] 请求成功
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:187 | [1767454870100-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:189 | [1767454870100-139636122853888] 请求成功
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:187 | [1767454870273-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:189 | [1767454870273-139636122853888] 请求成功
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:187 | [1767454870448-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:189 | [1767454870448-139636122853888] 请求成功
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:187 | [1767454870628-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:189 | [1767454870628-139636122853888] 请求成功
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:187 | [1767454870803-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:10 | MedicalAI | INFO     | decorated_function:189 | [1767454870803-139636122853888] 请求成功
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:187 | [1767454871021-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:189 | [1767454871021-139636122853888] 请求成功
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:187 | [1767454871208-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:189 | [1767454871208-139636122853888] 请求成功
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:187 | [1767454871396-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:189 | [1767454871396-139636122853888] 请求成功
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:187 | [1767454871581-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:189 | [1767454871581-139636122853888] 请求成功
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:187 | [1767454871771-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:189 | [1767454871771-139636122853888] 请求成功
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:187 | [1767454871941-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:11 | MedicalAI | INFO     | decorated_function:189 | [1767454871941-139636122853888] 请求成功
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:187 | [1767454872110-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:189 | [1767454872110-139636122853888] 请求成功
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:187 | [1767454872284-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:189 | [1767454872284-139636122853888] 请求成功
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:187 | [1767454872459-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:189 | [1767454872459-139636122853888] 请求成功
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:187 | [1767454872656-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:12 | MedicalAI | INFO     | decorated_function:189 | [1767454872656-139636122853888] 请求成功
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:187 | [1767454883325-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:189 | [1767454883325-139636122853888] 请求成功
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:187 | [1767454883492-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:189 | [1767454883492-139636122853888] 请求成功
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:187 | [1767454883673-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:189 | [1767454883673-139636122853888] 请求成功
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:187 | [1767454883849-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:23 | MedicalAI | INFO     | decorated_function:189 | [1767454883849-139636122853888] 请求成功
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:187 | [1767454884017-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:189 | [1767454884017-139636122853888] 请求成功
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:187 | [1767454884188-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:189 | [1767454884188-139636122853888] 请求成功
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:187 | [1767454884386-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:189 | [1767454884386-139636122853888] 请求成功
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:187 | [1767454884569-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:189 | [1767454884569-139636122853888] 请求成功
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:187 | [1767454884741-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:189 | [1767454884741-139636122853888] 请求成功
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:187 | [1767454884911-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:24 | MedicalAI | INFO     | decorated_function:189 | [1767454884911-139636122853888] 请求成功
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:187 | [1767454885088-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:189 | [1767454885088-139636122853888] 请求成功
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:187 | [1767454885257-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:189 | [1767454885257-139636122853888] 请求成功
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:187 | [1767454885431-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:189 | [1767454885431-139636122853888] 请求成功
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:187 | [1767454885602-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:189 | [1767454885602-139636122853888] 请求成功
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:187 | [1767454885786-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:25 | MedicalAI | INFO     | decorated_function:189 | [1767454885786-139636122853888] 请求成功
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:187 | [1767454886019-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:189 | [1767454886019-139636122853888] 请求成功
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:187 | [1767454886194-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:189 | [1767454886194-139636122853888] 请求成功
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:187 | [1767454886369-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:189 | [1767454886369-139636122853888] 请求成功
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:187 | [1767454886555-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:189 | [1767454886555-139636122853888] 请求成功
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:187 | [1767454886736-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:189 | [1767454886736-139636122853888] 请求成功
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:187 | [1767454886954-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:26 | MedicalAI | INFO     | decorated_function:189 | [1767454886954-139636122853888] 请求成功
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:187 | [1767454887131-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:189 | [1767454887131-139636122853888] 请求成功
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:187 | [1767454887308-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:189 | [1767454887308-139636122853888] 请求成功
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:187 | [1767454887483-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:189 | [1767454887483-139636122853888] 请求成功
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:187 | [1767454887668-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:189 | [1767454887668-139636122853888] 请求成功
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:187 | [1767454887841-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:27 | MedicalAI | INFO     | decorated_function:189 | [1767454887841-139636122853888] 请求成功
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:187 | [1767454888020-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:189 | [1767454888020-139636122853888] 请求成功
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:187 | [1767454888198-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:189 | [1767454888198-139636122853888] 请求成功
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:187 | [1767454888372-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:189 | [1767454888372-139636122853888] 请求成功
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:187 | [1767454888547-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:189 | [1767454888547-139636122853888] 请求成功
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:187 | [1767454888734-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:189 | [1767454888734-139636122853888] 请求成功
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:187 | [1767454888909-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:28 | MedicalAI | INFO     | decorated_function:189 | [1767454888909-139636122853888] 请求成功
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:187 | [1767454889086-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:189 | [1767454889086-139636122853888] 请求成功
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:187 | [1767454889263-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:189 | [1767454889263-139636122853888] 请求成功
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:187 | [1767454889536-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:189 | [1767454889536-139636122853888] 请求成功
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:187 | [1767454889712-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:189 | [1767454889712-139636122853888] 请求成功
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:187 | [1767454889880-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:29 | MedicalAI | INFO     | decorated_function:189 | [1767454889880-139636122853888] 请求成功
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:187 | [1767454890048-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:189 | [1767454890048-139636122853888] 请求成功
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:187 | [1767454890215-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:189 | [1767454890215-139636122853888] 请求成功
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:187 | [1767454890378-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:189 | [1767454890378-139636122853888] 请求成功
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:187 | [1767454890556-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:189 | [1767454890556-139636122853888] 请求成功
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:187 | [1767454890734-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:189 | [1767454890734-139636122853888] 请求成功
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:187 | [1767454890927-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:30 | MedicalAI | INFO     | decorated_function:189 | [1767454890927-139636122853888] 请求成功
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:187 | [1767454891094-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:189 | [1767454891094-139636122853888] 请求成功
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:187 | [1767454891263-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:189 | [1767454891263-139636122853888] 请求成功
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:187 | [1767454891429-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:189 | [1767454891429-139636122853888] 请求成功
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:187 | [1767454891596-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:189 | [1767454891596-139636122853888] 请求成功
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:187 | [1767454891769-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:189 | [1767454891769-139636122853888] 请求成功
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:187 | [1767454891934-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:31 | MedicalAI | INFO     | decorated_function:189 | [1767454891934-139636122853888] 请求成功
+2026-01-03 23:41:32 | MedicalAI | INFO     | decorated_function:187 | [1767454892126-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:32 | MedicalAI | INFO     | decorated_function:189 | [1767454892126-139636122853888] 请求成功
+2026-01-03 23:41:32 | MedicalAI | INFO     | decorated_function:187 | [1767454892295-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:41:32 | MedicalAI | INFO     | decorated_function:189 | [1767454892295-139636122853888] 请求成功
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:187 | [1767454958002-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:189 | [1767454958002-139636122853888] 请求成功
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:187 | [1767454958175-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:189 | [1767454958175-139636122853888] 请求成功
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:187 | [1767454958343-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:189 | [1767454958343-139636122853888] 请求成功
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:187 | [1767454958535-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:189 | [1767454958535-139636122853888] 请求成功
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:187 | [1767454958708-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:189 | [1767454958708-139636122853888] 请求成功
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:187 | [1767454958875-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:38 | MedicalAI | INFO     | decorated_function:189 | [1767454958875-139636122853888] 请求成功
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:187 | [1767454959055-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:189 | [1767454959055-139636122853888] 请求成功
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:187 | [1767454959232-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:189 | [1767454959232-139636122853888] 请求成功
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:187 | [1767454959401-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:189 | [1767454959401-139636122853888] 请求成功
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:187 | [1767454959568-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:189 | [1767454959568-139636122853888] 请求成功
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:187 | [1767454959729-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:189 | [1767454959729-139636122853888] 请求成功
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:187 | [1767454959891-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:39 | MedicalAI | INFO     | decorated_function:189 | [1767454959891-139636122853888] 请求成功
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:187 | [1767454960070-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:189 | [1767454960070-139636122853888] 请求成功
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:187 | [1767454960234-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:189 | [1767454960234-139636122853888] 请求成功
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:187 | [1767454960406-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:189 | [1767454960406-139636122853888] 请求成功
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:187 | [1767454960575-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:189 | [1767454960575-139636122853888] 请求成功
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:187 | [1767454960736-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:189 | [1767454960736-139636122853888] 请求成功
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:187 | [1767454960901-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:40 | MedicalAI | INFO     | decorated_function:189 | [1767454960901-139636122853888] 请求成功
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:187 | [1767454961087-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:189 | [1767454961087-139636122853888] 请求成功
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:187 | [1767454961252-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:189 | [1767454961252-139636122853888] 请求成功
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:187 | [1767454961420-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:189 | [1767454961420-139636122853888] 请求成功
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:187 | [1767454961864-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:41 | MedicalAI | INFO     | decorated_function:189 | [1767454961864-139636122853888] 请求成功
+2026-01-03 23:42:42 | MedicalAI | INFO     | decorated_function:187 | [1767454962862-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:42 | MedicalAI | INFO     | decorated_function:189 | [1767454962862-139636122853888] 请求成功
+2026-01-03 23:42:43 | MedicalAI | INFO     | decorated_function:187 | [1767454963865-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:43 | MedicalAI | INFO     | decorated_function:189 | [1767454963865-139636122853888] 请求成功
+2026-01-03 23:42:44 | MedicalAI | INFO     | decorated_function:187 | [1767454964872-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:44 | MedicalAI | INFO     | decorated_function:189 | [1767454964872-139636122853888] 请求成功
+2026-01-03 23:42:45 | MedicalAI | INFO     | decorated_function:187 | [1767454965865-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:45 | MedicalAI | INFO     | decorated_function:189 | [1767454965865-139636122853888] 请求成功
+2026-01-03 23:42:46 | MedicalAI | INFO     | decorated_function:187 | [1767454966868-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:46 | MedicalAI | INFO     | decorated_function:189 | [1767454966868-139636122853888] 请求成功
+2026-01-03 23:42:47 | MedicalAI | INFO     | decorated_function:187 | [1767454967873-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:47 | MedicalAI | INFO     | decorated_function:189 | [1767454967873-139636122853888] 请求成功
+2026-01-03 23:42:48 | MedicalAI | INFO     | decorated_function:187 | [1767454968498-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:48 | MedicalAI | INFO     | decorated_function:189 | [1767454968498-139636122853888] 请求成功
+2026-01-03 23:42:48 | MedicalAI | INFO     | decorated_function:187 | [1767454968670-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:48 | MedicalAI | INFO     | decorated_function:189 | [1767454968670-139636122853888] 请求成功
+2026-01-03 23:42:48 | MedicalAI | INFO     | decorated_function:187 | [1767454968840-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:48 | MedicalAI | INFO     | decorated_function:189 | [1767454968840-139636122853888] 请求成功
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:187 | [1767454969015-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:189 | [1767454969015-139636122853888] 请求成功
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:187 | [1767454969186-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:189 | [1767454969186-139636122853888] 请求成功
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:187 | [1767454969379-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:189 | [1767454969379-139636122853888] 请求成功
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:187 | [1767454969582-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:189 | [1767454969582-139636122853888] 请求成功
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:187 | [1767454969772-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:189 | [1767454969772-139636122853888] 请求成功
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:187 | [1767454969934-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:49 | MedicalAI | INFO     | decorated_function:189 | [1767454969934-139636122853888] 请求成功
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:187 | [1767454970102-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:189 | [1767454970102-139636122853888] 请求成功
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:187 | [1767454970267-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:189 | [1767454970267-139636122853888] 请求成功
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:187 | [1767454970428-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:189 | [1767454970428-139636122853888] 请求成功
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:187 | [1767454970593-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:189 | [1767454970593-139636122853888] 请求成功
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:187 | [1767454970754-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:189 | [1767454970754-139636122853888] 请求成功
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:187 | [1767454970920-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:50 | MedicalAI | INFO     | decorated_function:189 | [1767454970920-139636122853888] 请求成功
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:187 | [1767454971080-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:189 | [1767454971080-139636122853888] 请求成功
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:187 | [1767454971256-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:189 | [1767454971256-139636122853888] 请求成功
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:187 | [1767454971421-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:189 | [1767454971421-139636122853888] 请求成功
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:187 | [1767454971615-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:189 | [1767454971615-139636122853888] 请求成功
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:187 | [1767454971789-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:189 | [1767454971789-139636122853888] 请求成功
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:187 | [1767454971957-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:51 | MedicalAI | INFO     | decorated_function:189 | [1767454971957-139636122853888] 请求成功
+2026-01-03 23:42:52 | MedicalAI | INFO     | decorated_function:187 | [1767454972126-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:52 | MedicalAI | INFO     | decorated_function:189 | [1767454972126-139636122853888] 请求成功
+2026-01-03 23:42:52 | MedicalAI | INFO     | decorated_function:187 | [1767454972290-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:42:52 | MedicalAI | INFO     | decorated_function:189 | [1767454972290-139636122853888] 请求成功
+2026-01-03 23:42:56 | MedicalAI | INFO     | decorated_function:187 | [1767454976111-139636122853888] 请求开始: POST /api/ollama/generate
+2026-01-03 23:42:56 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-03 23:42:56 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=2375
+2026-01-03 23:42:59 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 797字符, 耗时: 3.87秒
+2026-01-03 23:42:59 | MedicalAI | INFO     | decorated_function:189 | [1767454976111-139636122853888] 请求成功
+2026-01-03 23:44:11 | MedicalAI | INFO     | decorated_function:187 | [1767455051584-139636122853888] 请求开始: POST /api/ollama/generate
+2026-01-03 23:44:11 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-03 23:44:11 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=2375
+2026-01-03 23:44:15 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 806字符, 耗时: 3.90秒
+2026-01-03 23:44:15 | MedicalAI | INFO     | decorated_function:189 | [1767455051584-139636122853888] 请求成功
+2026-01-03 23:51:22 | MedicalAI | INFO     | decorated_function:187 | [1767455482822-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:51:22 | MedicalAI | INFO     | decorated_function:189 | [1767455482822-139636122853888] 请求成功
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:187 | [1767455483002-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:189 | [1767455483002-139636122853888] 请求成功
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:187 | [1767455483174-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:189 | [1767455483174-139636122853888] 请求成功
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:187 | [1767455483353-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:189 | [1767455483353-139636122853888] 请求成功
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:187 | [1767455483539-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:51:23 | MedicalAI | INFO     | decorated_function:189 | [1767455483539-139636122853888] 请求成功
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:187 | [1767455546445-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:189 | [1767455546445-139636122853888] 请求成功
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:187 | [1767455546629-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:189 | [1767455546629-139636122853888] 请求成功
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:187 | [1767455546798-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:189 | [1767455546798-139636122853888] 请求成功
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:187 | [1767455546960-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:52:26 | MedicalAI | INFO     | decorated_function:189 | [1767455546960-139636122853888] 请求成功
+2026-01-03 23:52:27 | MedicalAI | INFO     | decorated_function:187 | [1767455547133-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:52:27 | MedicalAI | INFO     | decorated_function:189 | [1767455547133-139636122853888] 请求成功
+2026-01-03 23:52:59 | MedicalAI | INFO     | decorated_function:187 | [1767455579265-139636122853888] 请求开始: POST /api/ollama/generate
+2026-01-03 23:52:59 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-03 23:52:59 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=401
+2026-01-03 23:53:04 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 650字符, 耗时: 4.98秒
+2026-01-03 23:53:04 | MedicalAI | INFO     | decorated_function:189 | [1767455579265-139636122853888] 请求成功
+2026-01-03 23:53:24 | MedicalAI | INFO     | decorated_function:187 | [1767455604854-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:24 | MedicalAI | INFO     | decorated_function:189 | [1767455604854-139636122853888] 请求成功
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:187 | [1767455605030-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:189 | [1767455605030-139636122853888] 请求成功
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:187 | [1767455605203-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:189 | [1767455605203-139636122853888] 请求成功
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:187 | [1767455605387-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:189 | [1767455605387-139636122853888] 请求成功
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:187 | [1767455605565-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:189 | [1767455605565-139636122853888] 请求成功
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:187 | [1767455605737-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:189 | [1767455605737-139636122853888] 请求成功
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:187 | [1767455605928-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:25 | MedicalAI | INFO     | decorated_function:189 | [1767455605928-139636122853888] 请求成功
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:187 | [1767455606120-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:189 | [1767455606120-139636122853888] 请求成功
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:187 | [1767455606337-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:189 | [1767455606337-139636122853888] 请求成功
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:187 | [1767455606605-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:189 | [1767455606605-139636122853888] 请求成功
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:187 | [1767455606825-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:26 | MedicalAI | INFO     | decorated_function:189 | [1767455606825-139636122853888] 请求成功
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:187 | [1767455607045-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:189 | [1767455607045-139636122853888] 请求成功
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:187 | [1767455607253-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:189 | [1767455607253-139636122853888] 请求成功
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:187 | [1767455607465-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:189 | [1767455607465-139636122853888] 请求成功
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:187 | [1767455607660-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:189 | [1767455607660-139636122853888] 请求成功
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:187 | [1767455607857-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:27 | MedicalAI | INFO     | decorated_function:189 | [1767455607857-139636122853888] 请求成功
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:187 | [1767455608057-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:189 | [1767455608057-139636122853888] 请求成功
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:187 | [1767455608264-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:189 | [1767455608264-139636122853888] 请求成功
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:187 | [1767455608459-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:189 | [1767455608459-139636122853888] 请求成功
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:187 | [1767455608656-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:189 | [1767455608656-139636122853888] 请求成功
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:187 | [1767455608848-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:28 | MedicalAI | INFO     | decorated_function:189 | [1767455608848-139636122853888] 请求成功
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:187 | [1767455609042-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:189 | [1767455609042-139636122853888] 请求成功
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:187 | [1767455609252-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:189 | [1767455609252-139636122853888] 请求成功
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:187 | [1767455609461-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:189 | [1767455609461-139636122853888] 请求成功
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:187 | [1767455609665-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:189 | [1767455609665-139636122853888] 请求成功
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:187 | [1767455609861-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:29 | MedicalAI | INFO     | decorated_function:189 | [1767455609861-139636122853888] 请求成功
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:187 | [1767455610055-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:189 | [1767455610055-139636122853888] 请求成功
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:187 | [1767455610256-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:189 | [1767455610256-139636122853888] 请求成功
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:187 | [1767455610448-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:189 | [1767455610448-139636122853888] 请求成功
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:187 | [1767455610639-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:189 | [1767455610639-139636122853888] 请求成功
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:187 | [1767455610827-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:30 | MedicalAI | INFO     | decorated_function:189 | [1767455610827-139636122853888] 请求成功
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:187 | [1767455611023-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:189 | [1767455611023-139636122853888] 请求成功
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:187 | [1767455611216-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:189 | [1767455611216-139636122853888] 请求成功
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:187 | [1767455611413-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:189 | [1767455611413-139636122853888] 请求成功
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:187 | [1767455611628-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:189 | [1767455611628-139636122853888] 请求成功
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:187 | [1767455611823-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:31 | MedicalAI | INFO     | decorated_function:189 | [1767455611823-139636122853888] 请求成功
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:187 | [1767455612069-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:189 | [1767455612069-139636122853888] 请求成功
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:187 | [1767455612268-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:189 | [1767455612268-139636122853888] 请求成功
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:187 | [1767455612458-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:189 | [1767455612458-139636122853888] 请求成功
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:187 | [1767455612658-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:189 | [1767455612658-139636122853888] 请求成功
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:187 | [1767455612876-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:32 | MedicalAI | INFO     | decorated_function:189 | [1767455612876-139636122853888] 请求成功
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:187 | [1767455613089-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:189 | [1767455613089-139636122853888] 请求成功
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:187 | [1767455613287-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:189 | [1767455613287-139636122853888] 请求成功
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:187 | [1767455613485-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:189 | [1767455613485-139636122853888] 请求成功
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:187 | [1767455613680-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:189 | [1767455613680-139636122853888] 请求成功
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:187 | [1767455613872-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:33 | MedicalAI | INFO     | decorated_function:189 | [1767455613872-139636122853888] 请求成功
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:187 | [1767455614066-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:189 | [1767455614066-139636122853888] 请求成功
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:187 | [1767455614263-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:189 | [1767455614263-139636122853888] 请求成功
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:187 | [1767455614450-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:189 | [1767455614450-139636122853888] 请求成功
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:187 | [1767455614639-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:189 | [1767455614639-139636122853888] 请求成功
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:187 | [1767455614844-139636122853888] 请求开始: POST /api/predict
+2026-01-03 23:53:34 | MedicalAI | INFO     | decorated_function:189 | [1767455614844-139636122853888] 请求成功
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:187 | [1767456046379-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:189 | [1767456046379-139636122853888] 请求成功
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:187 | [1767456046552-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:189 | [1767456046552-139636122853888] 请求成功
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:187 | [1767456046721-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:189 | [1767456046721-139636122853888] 请求成功
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:187 | [1767456046913-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:00:46 | MedicalAI | INFO     | decorated_function:189 | [1767456046913-139636122853888] 请求成功
+2026-01-04 00:00:47 | MedicalAI | INFO     | decorated_function:187 | [1767456047090-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:00:47 | MedicalAI | INFO     | decorated_function:189 | [1767456047090-139636122853888] 请求成功
+2026-01-04 00:00:58 | MedicalAI | INFO     | decorated_function:187 | [1767456058792-139636122853888] 请求开始: POST /api/ollama/generate
+2026-01-04 00:00:58 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-04 00:00:58 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=401
+2026-01-04 00:01:03 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 536字符, 耗时: 4.48秒
+2026-01-04 00:01:03 | MedicalAI | INFO     | decorated_function:189 | [1767456058792-139636122853888] 请求成功
+2026-01-04 00:16:27 | MedicalAI | INFO     | decorated_function:187 | [1767456987953-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:27 | MedicalAI | INFO     | decorated_function:189 | [1767456987953-139636122853888] 请求成功
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:187 | [1767456988168-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:189 | [1767456988168-139636122853888] 请求成功
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:187 | [1767456988364-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:189 | [1767456988364-139636122853888] 请求成功
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:187 | [1767456988550-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:189 | [1767456988550-139636122853888] 请求成功
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:187 | [1767456988729-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:189 | [1767456988729-139636122853888] 请求成功
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:187 | [1767456988911-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:28 | MedicalAI | INFO     | decorated_function:189 | [1767456988911-139636122853888] 请求成功
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:187 | [1767456989094-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:189 | [1767456989094-139636122853888] 请求成功
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:187 | [1767456989304-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:189 | [1767456989304-139636122853888] 请求成功
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:187 | [1767456989497-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:189 | [1767456989497-139636122853888] 请求成功
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:187 | [1767456989681-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:189 | [1767456989681-139636122853888] 请求成功
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:187 | [1767456989864-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:29 | MedicalAI | INFO     | decorated_function:189 | [1767456989864-139636122853888] 请求成功
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:187 | [1767456990120-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:189 | [1767456990120-139636122853888] 请求成功
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:187 | [1767456990292-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:189 | [1767456990292-139636122853888] 请求成功
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:187 | [1767456990482-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:189 | [1767456990482-139636122853888] 请求成功
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:187 | [1767456990691-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:189 | [1767456990691-139636122853888] 请求成功
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:187 | [1767456990878-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:30 | MedicalAI | INFO     | decorated_function:189 | [1767456990878-139636122853888] 请求成功
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:187 | [1767456991067-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:189 | [1767456991067-139636122853888] 请求成功
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:187 | [1767456991246-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:189 | [1767456991246-139636122853888] 请求成功
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:187 | [1767456991411-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:189 | [1767456991411-139636122853888] 请求成功
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:187 | [1767456991613-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:189 | [1767456991613-139636122853888] 请求成功
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:187 | [1767456991826-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:31 | MedicalAI | INFO     | decorated_function:189 | [1767456991826-139636122853888] 请求成功
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:187 | [1767456992015-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:189 | [1767456992015-139636122853888] 请求成功
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:187 | [1767456992188-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:189 | [1767456992188-139636122853888] 请求成功
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:187 | [1767456992370-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:189 | [1767456992370-139636122853888] 请求成功
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:187 | [1767456992545-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:189 | [1767456992545-139636122853888] 请求成功
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:187 | [1767456992713-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:189 | [1767456992713-139636122853888] 请求成功
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:187 | [1767456992890-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:32 | MedicalAI | INFO     | decorated_function:189 | [1767456992890-139636122853888] 请求成功
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:187 | [1767456993119-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:189 | [1767456993119-139636122853888] 请求成功
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:187 | [1767456993330-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:189 | [1767456993330-139636122853888] 请求成功
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:187 | [1767456993524-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:189 | [1767456993524-139636122853888] 请求成功
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:187 | [1767456993721-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:189 | [1767456993721-139636122853888] 请求成功
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:187 | [1767456993902-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:33 | MedicalAI | INFO     | decorated_function:189 | [1767456993902-139636122853888] 请求成功
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:187 | [1767456994075-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:189 | [1767456994075-139636122853888] 请求成功
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:187 | [1767456994246-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:189 | [1767456994246-139636122853888] 请求成功
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:187 | [1767456994420-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:189 | [1767456994420-139636122853888] 请求成功
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:187 | [1767456994589-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:189 | [1767456994589-139636122853888] 请求成功
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:187 | [1767456994777-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:189 | [1767456994777-139636122853888] 请求成功
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:187 | [1767456994963-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:34 | MedicalAI | INFO     | decorated_function:189 | [1767456994963-139636122853888] 请求成功
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:187 | [1767456995144-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:189 | [1767456995144-139636122853888] 请求成功
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:187 | [1767456995322-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:189 | [1767456995322-139636122853888] 请求成功
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:187 | [1767456995509-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:189 | [1767456995509-139636122853888] 请求成功
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:187 | [1767456995692-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:189 | [1767456995692-139636122853888] 请求成功
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:187 | [1767456995873-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:35 | MedicalAI | INFO     | decorated_function:189 | [1767456995873-139636122853888] 请求成功
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:187 | [1767456996089-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:189 | [1767456996089-139636122853888] 请求成功
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:187 | [1767456996288-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:189 | [1767456996288-139636122853888] 请求成功
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:187 | [1767456996491-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:189 | [1767456996491-139636122853888] 请求成功
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:187 | [1767456996676-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:189 | [1767456996676-139636122853888] 请求成功
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:187 | [1767456996868-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:36 | MedicalAI | INFO     | decorated_function:189 | [1767456996868-139636122853888] 请求成功
+2026-01-04 00:16:37 | MedicalAI | INFO     | decorated_function:187 | [1767456997081-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:37 | MedicalAI | INFO     | decorated_function:189 | [1767456997081-139636122853888] 请求成功
+2026-01-04 00:16:37 | MedicalAI | INFO     | decorated_function:187 | [1767456997263-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:37 | MedicalAI | INFO     | decorated_function:189 | [1767456997263-139636122853888] 请求成功
+2026-01-04 00:16:37 | MedicalAI | INFO     | decorated_function:187 | [1767456997458-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:16:37 | MedicalAI | INFO     | decorated_function:189 | [1767456997458-139636122853888] 请求成功
+2026-01-04 00:17:04 | MedicalAI | INFO     | decorated_function:187 | [1767457024674-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:17:04 | MedicalAI | INFO     | decorated_function:189 | [1767457024674-139636122853888] 请求成功
+2026-01-04 00:17:04 | MedicalAI | INFO     | decorated_function:187 | [1767457024881-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:17:04 | MedicalAI | INFO     | decorated_function:189 | [1767457024881-139636122853888] 请求成功
+2026-01-04 00:17:05 | MedicalAI | INFO     | decorated_function:187 | [1767457025075-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:17:05 | MedicalAI | INFO     | decorated_function:189 | [1767457025075-139636122853888] 请求成功
+2026-01-04 00:17:05 | MedicalAI | INFO     | decorated_function:187 | [1767457025297-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:17:05 | MedicalAI | INFO     | decorated_function:189 | [1767457025297-139636122853888] 请求成功
+2026-01-04 00:17:05 | MedicalAI | INFO     | decorated_function:187 | [1767457025494-139636122853888] 请求开始: POST /api/predict
+2026-01-04 00:17:05 | MedicalAI | INFO     | decorated_function:189 | [1767457025494-139636122853888] 请求成功
+2026-01-04 00:17:12 | MedicalAI | INFO     | decorated_function:187 | [1767457032280-139636122853888] 请求开始: POST /api/ollama/generate
+2026-01-04 00:17:12 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-04 00:17:12 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=401
+2026-01-04 00:17:17 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 662字符, 耗时: 4.85秒
+2026-01-04 00:17:17 | MedicalAI | INFO     | decorated_function:189 | [1767457032280-139636122853888] 请求成功
+2026-01-04 16:17:41 | MedicalAI | INFO     | setup_logger:106 | 日志文件已创建: logs/server.log
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:505 | 初始化Ollama代理: http://localhost:11434
+2026-01-04 16:17:41 | MedicalAI | INFO     | _setup_cors:646 | CORS配置完成
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:625 | Flask应用初始化完成
+2026-01-04 16:17:41 | MedicalAI | INFO     | initialize_model:847 | 开始初始化模型服务...
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:278 | ============================================================
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:279 | 初始化模型服务
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:280 | ============================================================
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:283 | 使用设备: cuda
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:286 | GPU信息: NVIDIA GeForce RTX 4090 D
+2026-01-04 16:17:41 | MedicalAI | INFO     | __init__:287 | GPU内存: 23.64 GB
+2026-01-04 16:17:41 | MedicalAI | INFO     | _load_resources:306 | 加载Tokenizer: trueto/medbert-base-wwm-chinese
+2026-01-04 16:17:44 | MedicalAI | INFO     | _load_resources:308 | ✓ Tokenizer加载成功, 词表大小: 21128
+2026-01-04 16:17:44 | MedicalAI | INFO     | _load_resources:311 | 初始化模型结构
+2026-01-04 16:17:44 | MedicalAI | INFO     | __init__:241 | 初始化BERT模型: trueto/medbert-base-wwm-chinese
+2026-01-04 16:17:45 | MedicalAI | ERROR    | _load_resources:344 | ✗ 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-04 16:17:45 | MedicalAI | ERROR    | _load_resources:345 | Traceback (most recent call last):
+  File "/root/medical/app.py", line 312, in _load_resources
+    self.model = MedicalBertClassifier(config.BERT_MODEL_NAME, num_classes=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/medical/app.py", line 242, in __init__
+    self.bert = BertModel.from_pretrained(bert_model_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+2026-01-04 16:17:45 | MedicalAI | CRITICAL | <module>:923 | 启动失败: 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+2026-01-04 16:17:45 | MedicalAI | CRITICAL | <module>:924 | Traceback (most recent call last):
+  File "/root/medical/app.py", line 312, in _load_resources
+    self.model = MedicalBertClassifier(config.BERT_MODEL_NAME, num_classes=3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/medical/app.py", line 242, in __init__
+    self.bert = BertModel.from_pretrained(bert_model_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/medical/app.py", line 917, in <module>
+    flask_app.initialize_model()
+  File "/root/medical/app.py", line 848, in initialize_model
+    self.model_service = ModelService()
+                         ^^^^^^^^^^^^^^
+  File "/root/medical/app.py", line 296, in __init__
+    self._load_resources()
+  File "/root/medical/app.py", line 346, in _load_resources
+    raise ModelException(f"模型加载失败: {str(e)}")
+ModelException: 模型加载失败: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434
+
+2026-01-04 16:18:31 | MedicalAI | INFO     | setup_logger:106 | 日志文件已创建: logs/server.log
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:505 | 初始化Ollama代理: http://localhost:11434
+2026-01-04 16:18:31 | MedicalAI | INFO     | _setup_cors:646 | CORS配置完成
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:625 | Flask应用初始化完成
+2026-01-04 16:18:31 | MedicalAI | INFO     | initialize_model:847 | 开始初始化模型服务...
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:278 | ============================================================
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:279 | 初始化模型服务
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:280 | ============================================================
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:283 | 使用设备: cuda
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:286 | GPU信息: NVIDIA GeForce RTX 4090 D
+2026-01-04 16:18:31 | MedicalAI | INFO     | __init__:287 | GPU内存: 23.64 GB
+2026-01-04 16:18:31 | MedicalAI | INFO     | _load_resources:306 | 加载Tokenizer: trueto/medbert-base-wwm-chinese
+2026-01-04 16:18:33 | MedicalAI | INFO     | _load_resources:308 | ✓ Tokenizer加载成功, 词表大小: 21128
+2026-01-04 16:18:33 | MedicalAI | INFO     | _load_resources:311 | 初始化模型结构
+2026-01-04 16:18:33 | MedicalAI | INFO     | __init__:241 | 初始化BERT模型: trueto/medbert-base-wwm-chinese
+2026-01-04 16:18:35 | MedicalAI | INFO     | __init__:248 | 模型结构初始化完成
+2026-01-04 16:18:35 | MedicalAI | INFO     | _load_resources:316 | 加载模型权重: best_medical_model.pth
+2026-01-04 16:18:35 | MedicalAI | INFO     | _load_resources:328 | ✓ 模型权重加载成功
+2026-01-04 16:18:35 | MedicalAI | INFO     | _load_resources:338 | ✓ 模型加载完成! 耗时: 4.13秒
+2026-01-04 16:18:35 | MedicalAI | INFO     | _warmup:351 | 执行模型预热...
+2026-01-04 16:18:36 | MedicalAI | INFO     | _warmup:354 | ✓ 模型预热完成
+2026-01-04 16:18:36 | MedicalAI | INFO     | __init__:298 | 模型服务初始化完成
+2026-01-04 16:18:36 | MedicalAI | INFO     | initialize_model:849 | 模型服务初始化成功
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:853 | ============================================================
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:854 | 医疗AI后端服务启动
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:855 | ============================================================
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:856 | 监听地址: 0.0.0.0:6006
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:857 | 本地访问: http://127.0.0.1:6006
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:858 | 外部访问: http://服务器IP:6006
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:859 | Ollama服务: http://localhost:11434
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:860 | 模型路径: best_medical_model.pth
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:861 | 调试模式: False
+2026-01-04 16:18:36 | MedicalAI | INFO     | run:862 | ============================================================
+2026-01-04 16:19:58 | MedicalAI | INFO     | decorated_function:187 | [1767514798804-139878490726720] 请求开始: POST /api/predict
+2026-01-04 16:19:58 | MedicalAI | INFO     | decorated_function:189 | [1767514798804-139878490726720] 请求成功
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:187 | [1767514799089-139878490726720] 请求开始: POST /api/predict
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:189 | [1767514799089-139878490726720] 请求成功
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:187 | [1767514799349-139878490726720] 请求开始: POST /api/predict
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:189 | [1767514799349-139878490726720] 请求成功
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:187 | [1767514799609-139878490726720] 请求开始: POST /api/predict
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:189 | [1767514799609-139878490726720] 请求成功
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:187 | [1767514799889-139878490726720] 请求开始: POST /api/predict
+2026-01-04 16:19:59 | MedicalAI | INFO     | decorated_function:189 | [1767514799889-139878490726720] 请求成功
+2026-01-04 16:20:37 | MedicalAI | INFO     | decorated_function:187 | [1767514837794-139878490726720] 请求开始: POST /api/ollama/generate
+2026-01-04 16:20:37 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-04 16:20:37 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=401
+2026-01-04 16:20:42 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 554字符, 耗时: 4.76秒
+2026-01-04 16:20:42 | MedicalAI | INFO     | decorated_function:189 | [1767514837794-139878490726720] 请求成功
+2026-01-06 15:16:44 | MedicalAI | INFO     | setup_logger:106 | 日志文件已创建: logs/server.log
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:505 | 初始化Ollama代理: http://localhost:11434
+2026-01-06 15:16:44 | MedicalAI | INFO     | _setup_cors:646 | CORS配置完成
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:625 | Flask应用初始化完成
+2026-01-06 15:16:44 | MedicalAI | INFO     | initialize_model:847 | 开始初始化模型服务...
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:278 | ============================================================
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:279 | 初始化模型服务
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:280 | ============================================================
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:283 | 使用设备: cuda
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:286 | GPU信息: NVIDIA GeForce RTX 4090 D
+2026-01-06 15:16:44 | MedicalAI | INFO     | __init__:287 | GPU内存: 23.64 GB
+2026-01-06 15:16:44 | MedicalAI | INFO     | _load_resources:306 | 加载Tokenizer: trueto/medbert-base-wwm-chinese
+2026-01-06 15:16:47 | MedicalAI | INFO     | _load_resources:308 | ✓ Tokenizer加载成功, 词表大小: 21128
+2026-01-06 15:16:47 | MedicalAI | INFO     | _load_resources:311 | 初始化模型结构
+2026-01-06 15:16:47 | MedicalAI | INFO     | __init__:241 | 初始化BERT模型: trueto/medbert-base-wwm-chinese
+2026-01-06 15:16:54 | MedicalAI | INFO     | __init__:248 | 模型结构初始化完成
+2026-01-06 15:16:54 | MedicalAI | INFO     | _load_resources:316 | 加载模型权重: best_medical_model.pth
+2026-01-06 15:16:55 | MedicalAI | INFO     | _load_resources:328 | ✓ 模型权重加载成功
+2026-01-06 15:16:55 | MedicalAI | INFO     | _load_resources:338 | ✓ 模型加载完成! 耗时: 11.23秒
+2026-01-06 15:16:55 | MedicalAI | INFO     | _warmup:351 | 执行模型预热...
+2026-01-06 15:16:55 | MedicalAI | INFO     | _warmup:354 | ✓ 模型预热完成
+2026-01-06 15:16:55 | MedicalAI | INFO     | __init__:298 | 模型服务初始化完成
+2026-01-06 15:16:55 | MedicalAI | INFO     | initialize_model:849 | 模型服务初始化成功
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:853 | ============================================================
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:854 | 医疗AI后端服务启动
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:855 | ============================================================
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:856 | 监听地址: 0.0.0.0:6006
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:857 | 本地访问: http://127.0.0.1:6006
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:858 | 外部访问: http://服务器IP:6006
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:859 | Ollama服务: http://localhost:11434
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:860 | 模型路径: best_medical_model.pth
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:861 | 调试模式: False
+2026-01-06 15:16:55 | MedicalAI | INFO     | run:862 | ============================================================
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:187 | [1767683951057-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:189 | [1767683951057-140300048326880] 请求成功
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:187 | [1767683951241-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:189 | [1767683951241-140300048326880] 请求成功
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:187 | [1767683951419-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:189 | [1767683951419-140300048326880] 请求成功
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:187 | [1767683951601-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:189 | [1767683951601-140300048326880] 请求成功
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:187 | [1767683951778-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:19:11 | MedicalAI | INFO     | decorated_function:189 | [1767683951778-140300048326880] 请求成功
+2026-01-06 15:21:18 | MedicalAI | INFO     | decorated_function:187 | [1767684078443-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:21:18 | MedicalAI | INFO     | decorated_function:189 | [1767684078443-140300048326880] 请求成功
+2026-01-06 15:21:18 | MedicalAI | INFO     | decorated_function:187 | [1767684078644-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:21:18 | MedicalAI | INFO     | decorated_function:189 | [1767684078644-140300048326880] 请求成功
+2026-01-06 15:21:18 | MedicalAI | INFO     | decorated_function:187 | [1767684078822-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:21:18 | MedicalAI | INFO     | decorated_function:189 | [1767684078822-140300048326880] 请求成功
+2026-01-06 15:21:19 | MedicalAI | INFO     | decorated_function:187 | [1767684079003-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:21:19 | MedicalAI | INFO     | decorated_function:189 | [1767684079003-140300048326880] 请求成功
+2026-01-06 15:21:19 | MedicalAI | INFO     | decorated_function:187 | [1767684079187-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:21:19 | MedicalAI | INFO     | decorated_function:189 | [1767684079187-140300048326880] 请求成功
+2026-01-06 15:21:38 | MedicalAI | INFO     | decorated_function:187 | [1767684098189-140300048326880] 请求开始: POST /api/ollama/generate
+2026-01-06 15:21:38 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-06 15:21:38 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=403
+2026-01-06 15:21:43 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 714字符, 耗时: 5.78秒
+2026-01-06 15:21:43 | MedicalAI | INFO     | decorated_function:189 | [1767684098189-140300048326880] 请求成功
+2026-01-06 15:24:30 | MedicalAI | INFO     | decorated_function:187 | [1767684270844-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:24:30 | MedicalAI | INFO     | decorated_function:189 | [1767684270844-140300048326880] 请求成功
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:187 | [1767684271053-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:189 | [1767684271053-140300048326880] 请求成功
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:187 | [1767684271250-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:189 | [1767684271250-140300048326880] 请求成功
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:187 | [1767684271443-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:189 | [1767684271443-140300048326880] 请求成功
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:187 | [1767684271642-140300048326880] 请求开始: POST /api/predict
+2026-01-06 15:24:31 | MedicalAI | INFO     | decorated_function:189 | [1767684271642-140300048326880] 请求成功
+2026-01-06 15:24:33 | MedicalAI | INFO     | decorated_function:187 | [1767684273692-140300048326880] 请求开始: POST /api/ollama/generate
+2026-01-06 15:24:33 | MedicalAI | INFO     | ollama_generate:812 | Ollama生成请求: model=qwen2.5, stream=False
+2026-01-06 15:24:33 | MedicalAI | INFO     | generate:536 | Ollama请求: model=qwen2.5, stream=False, prompt_len=403
+2026-01-06 15:24:37 | MedicalAI | INFO     | generate:574 | Ollama响应完成: 791字符, 耗时: 3.53秒
+2026-01-06 15:24:37 | MedicalAI | INFO     | decorated_function:189 | [1767684273692-140300048326880] 请求成功
