@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>医疗报告 AI 智能工作台 Pro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap");
+      :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #818cf8;
+        --success-color: #10b981;
+        --danger-color: #ef4444;
+        --warning-color: #f59e0b;
+        --sidebar-width: 320px;
+      }
+      body {
+        font-family: "Noto Sans SC", sans-serif;
+        background-color: #eef2f6;
+        margin: 0;
+      }
+      .sidebar {
+        width: var(--sidebar-width);
+        height: 100vh;
+        background: white;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar-header {
+        padding: 2rem 1.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+      }
+      .sidebar-content {
+        flex: 1;
+        padding: 1.5rem;
+        overflow-y: auto;
+      }
+      .import-box {
+        border: 2px dashed #cbd5e1;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        background: #f8fafc;
+        margin-bottom: 1.5rem;
+      }
+      .import-box:hover {
+        border-color: var(--primary-color);
+        background: #eef2ff;
+      }
+      .patient-list-item {
+        padding: 1rem;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        background: #f8fafc;
+        border-left: 4px solid transparent;
+        transition: all 0.2s;
+      }
+      .patient-list-item:hover {
+        background: #f1f5f9;
+      }
+      .patient-list-item.active {
+        background: white;
+        border-left-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .main-content {
+        margin-left: var(--sidebar-width);
+        padding: 2rem;
+        min-height: 100vh;
+      }
+      .report-paper {
+        background: white;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 20mm;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      .med-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      .med-table th {
+        background: #f8fafc;
+        padding: 12px;
+        border-bottom: 2px solid #e2e8f0;
+        font-size: 0.85rem;
+        text-align: left;
+      }
+      .med-table td {
+        padding: 12px;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .badge-status {
+        padding: 0.3em 0.7em;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+      }
+      .bg-normal {
+        background: #dcfce7;
+        color: #166534;
+      }
+      .bg-abnormal {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      .bg-review {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      .bg-unknown {
+        background: #e2e8f0;
+        color: #64748b;
+      }
+      .ai-insight {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border-left: 4px solid var(--primary-color);
+        margin-top: 2rem;
+      }
+      .floating-actions {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 999;
+      }
+      .fab {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+      }
+      .fab:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+      .fab:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .fab-bert {
+        background: var(--primary-color);
+      }
+      .fab-llm {
+        background: var(--success-color);
+      }
+      .connection-status {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .status-connected {
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #86efac;
+      }
+      .status-disconnected {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fca5a5;
+      }
+      .status-checking {
+        background: #fef3c7;
+        color: #92400e;
+        border: 1px solid #fde047;
+      }
+      .alert-box {
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        display: flex;
+        align-items: start;
+        gap: 0.75rem;
+      }
+      .alert-error {
+        background: #fee2e2;
+        color: #991b1b;
+        border-left: 4px solid var(--danger-color);
+      }
+      .alert-success {
+        background: #dcfce7;
+        color: #166534;
+        border-left: 4px solid var(--success-color);
+      }
+      .alert-info {
+        background: #dbeafe;
+        color: #1e40af;
+        border-left: 4px solid #3b82f6;
+      }
+      .server-config {
+        background: #f1f5f9;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      .config-input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+      .config-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+      .public-url {
+        background: #e0f2fe;
+        padding: 0.75rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+      }
+      .public-url a {
+        color: #0369a1;
+        text-decoration: none;
+        font-weight: 500;
+        word-break: break-all;
+      }
+      .public-url a:hover {
+        text-decoration: underline;
+      }
+      .model-selector {
+        background: #f8fafc;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      .progress-container {
+        margin: 1.5rem 0;
+      }
+      .progress-bar-custom {
+        height: 8px;
+        border-radius: 4px;
+        background: #e2e8f0;
+        overflow: hidden;
+      }
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        transition: width 0.3s ease;
+      }
+      .llm-settings {
+        background: #f0f9ff;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+      .toggle-switch {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+      }
+      .toggle-switch input {
+        display: none;
+      }
+      .toggle-slider {
+        width: 36px;
+        height: 20px;
+        background: #cbd5e1;
+        border-radius: 10px;
+        position: relative;
+        transition: background 0.3s;
+      }
+      .toggle-slider:before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: white;
+        border-radius: 50%;
+        top: 2px;
+        left: 2px;
+        transition: transform 0.3s;
+      }
+      .toggle-switch input:checked + .toggle-slider {
+        background: var(--success-color);
+      }
+      .toggle-switch input:checked + .toggle-slider:before {
+        transform: translateX(16px);
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .stat-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      .stat-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 0.5rem;
+      }
+      .spinner {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 2px solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.3s;
+      }
+      .fade-enter-from,
+      .fade-leave-to {
+        opacity: 0;
+      }
+      .log-console {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 8px;
+        font-family: "Courier New", monospace;
+        font-size: 0.75rem;
+        max-height: 200px;
+        overflow-y: auto;
+        margin-top: 1rem;
+      }
+      .log-entry {
+        margin-bottom: 0.25rem;
+      }
+      .log-time {
+        color: #94a3b8;
+      }
+      .log-info {
+        color: #60a5fa;
+      }
+      .log-error {
+        color: #f87171;
+      }
+      .log-success {
+        color: #4ade80;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <div class="h5 m-0">
+            <i class="fa-solid fa-staff-snake me-2"></i>MedAI Pro
+          </div>
+          <small>医疗报告智能工作台</small>
+        </div>
+        <div class="sidebar-content">
+          <div class="public-url">
+            <div class="small fw-bold mb-1">
+              <i class="fa-solid fa-cloud me-1"></i>云端服务地址:
+            </div>
+            <a :href="publicApiBase" target="_blank" rel="noopener"
+              >{{ serverHostname }}</a
+            >
+            <div class="text-muted mt-1 small">
+              <i class="fa-solid fa-circle-info me-1"></i>点击测试连接
+            </div>
+          </div>
+
+          <div class="server-config">
+            <div class="small fw-bold mb-2">
+              <i class="fa-solid fa-server me-1"></i>服务器配置
+            </div>
+            <div class="mb-2">
+              <label class="small text-muted">API地址:</label>
+              <input
+                type="text"
+                class="config-input"
+                v-model="serverAddress"
+                @blur="updateApiUrls"
+                placeholder="u854272-a5b8-4f8246aa.westc.gpuhub.com:8443"
+              />
+            </div>
+            <div class="d-flex gap-2">
+              <button
+                type="button"
+                class="btn btn-sm btn-primary w-100"
+                @click="checkHealth"
+                :disabled="connectionStatus === 'checking'"
+              >
+                <i class="fa-solid fa-wifi me-1"></i>
+                <span v-if="connectionStatus !== 'checking'">测试连接</span>
+                <span v-else><span class="spinner"></span> 检测中</span>
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-secondary w-100"
+                @click="resetToDefault"
+              >
+                <i class="fa-solid fa-rotate-left me-1"></i>重置
+              </button>
+            </div>
+          </div>
+
+          <div :class="['connection-status', getStatusClass()]">
+            <i class="fa-solid" :class="getStatusIcon()"></i>
+            <div class="flex-grow-1">
+              <div>{{ connectionStatusText }}</div>
+              <div v-if="serverInfo" class="small mt-1">
+                <span v-if="serverInfo.device"
+                  >设备: {{ serverInfo.device }}</span
+                >
+                <span v-if="serverInfo.ollama_status" class="ms-2">
+                  Ollama:
+                  <span
+                    :class="{'text-success': serverInfo.ollama_status === 'healthy', 'text-danger': serverInfo.ollama_status !== 'healthy'}"
+                    >{{ serverInfo.ollama_status }}</span
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="model-selector">
+            <div class="small fw-bold mb-2">
+              <i class="fa-solid fa-brain me-1"></i>AI模型配置
+            </div>
+            <div class="mb-2">
+              <label class="small text-muted">Ollama模型:</label>
+              <select class="config-input" v-model="selectedModel" :disabled="availableModels.length === 0">
+                <option v-if="availableModels.length === 0" value="">正在加载模型...</option>
+                <option v-if="availableModels.length === 0 && ollamaModelsError" value="">无法获取模型列表</option>
+                <option v-for="model in availableModels" :key="model.name" :value="model.name">
+                  {{ model.name }} ({{ formatSize(model.size) }})
+                </option>
+              </select>
+              <div v-if="availableModels.length === 0 && !ollamaModelsError" class="small text-muted mt-1">
+                <i class="fa-solid fa-spinner fa-spin me-1"></i>正在从Ollama获取模型列表...
+              </div>
+              <div v-if="ollamaModelsError" class="small text-danger mt-1">
+                <i class="fa-solid fa-exclamation-triangle me-1"></i>{{ ollamaModelsError }}
+              </div>
+              <div v-if="availableModels.length > 0" class="small text-success mt-1">
+                <i class="fa-solid fa-check-circle me-1"></i>已加载 {{ availableModels.length }} 个模型
+              </div>
+            </div>
+            <div class="llm-settings">
+              <div class="small fw-bold mb-2">LLM设置</div>
+              <div class="mb-2">
+                <label class="toggle-switch">
+                  <input type="checkbox" v-model="streamResponse" />
+                  <span class="toggle-slider"></span>
+                  <span class="small ms-1">流式响应</span>
+                </label>
+              </div>
+              <div>
+                <label class="small text-muted"
+                  >温度 ({{ temperature }}):</label
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.1"
+                  v-model.number="temperature"
+                  class="w-100 mt-1"
+                />
+                <div
+                  class="d-flex justify-content-between small text-muted mt-1"
+                >
+                  <span>保守</span>
+                  <span>创造</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <input
+            type="file"
+            id="fileIn"
+            class="d-none"
+            @change="importExcel"
+            accept=".xlsx,.xls,.csv"
+          />
+          <div
+            class="import-box"
+            onclick="document.getElementById('fileIn').click()"
+          >
+            <i class="fa-solid fa-file-excel fa-2x text-muted mb-2"></i>
+            <div class="small fw-bold">导入 Excel 数据</div>
+            <div class="text-muted small mt-1">支持 .xlsx, .xls, .csv 格式</div>
+          </div>
+
+          <div v-if="Object.keys(patients).length === 0" class="text-center">
+            <i class="fa-regular fa-folder-open fa-2x text-muted mb-2"></i>
+            <div class="text-muted small">未导入患者数据</div>
+          </div>
+
+          <div v-else class="mb-2">
+            <div class="small text-muted mb-2">
+              <i class="fa-solid fa-users me-1"></i>患者列表 ({{
+              Object.keys(patients).length }})
+            </div>
+          </div>
+
+          <div
+            v-for="(p, id) in patients"
+            :key="id"
+            @click="selectPatient(id)"
+            :class="['patient-list-item', currentId === id ? 'active' : '']"
+          >
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-bold">{{ p.name || '未知姓名' }}</div>
+                <div class="text-muted small mt-1">
+                  <i class="fa-solid fa-id-card me-1"></i>ID: {{ p.id || '未知' }}
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-regular fa-calendar me-1"></i>{{ p.date ||
+                  '未知日期' }}
+                </div>
+                <div class="text-muted small">
+                  <i class="fa-solid fa-user me-1"></i>{{ p.age || '?' }}岁
+                </div>
+              </div>
+              <div v-if="p.hasAnalysis">
+                <i class="fa-solid fa-circle-check text-success"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="floating-actions" v-if="currentPatient">
+          <button
+            type="button"
+            class="fab fab-bert"
+            @click.prevent="runBERT"
+            :disabled="isBertProcessing || connectionStatus !== 'connected'"
+            :title="isBertProcessing ? '智能分析中...' : '智能分析（规则+BERT）'"
+          >
+            <i class="fa-solid fa-microscope" v-if="!isBertProcessing"></i>
+            <span v-else class="spinner"></span>
+          </button>
+          <button
+            type="button"
+            class="fab fab-llm"
+            @click.prevent="runLLM"
+            :disabled="isLlmProcessing || connectionStatus !== 'connected' || !currentPatient.hasAnalysis"
+            :title="isLlmProcessing ? 'LLM生成中...' : currentPatient.hasAnalysis ? 'LLM智能综述' : '请先运行智能分析'"
+          >
+            <i class="fa-solid fa-user-doctor" v-if="!isLlmProcessing"></i>
+            <span v-else class="spinner"></span>
+          </button>
+        </div>
+
+        <div v-if="currentPatient" class="report-paper">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>智慧医疗体检报告</h2>
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-success" @click="exportCurrentPatient">
+                <i class="fa-solid fa-file-csv me-1"></i>导出当前患者
+              </button>
+              <button type="button" class="btn btn-sm btn-primary" @click="exportAllPatients" :disabled="Object.keys(patients).length === 0">
+                <i class="fa-solid fa-file-export me-1"></i>批量导出全部
+              </button>
+            </div>
+          </div>
+
+          <div class="row bg-light p-3 rounded mb-4">
+            <div class="col-md-3">
+              <strong><i class="fa-solid fa-id-card me-1"></i>就诊ID:</strong> {{
+              currentPatient.id || '-' }}
+            </div>
+            <div class="col-md-3">
+              <strong><i class="fa-solid fa-user me-1"></i>姓名:</strong> {{
+              currentPatient.name || '-' }}
+            </div>
+            <div class="col-md-3">
+              <strong
+                ><i class="fa-solid fa-birthday-cake me-1"></i>年龄:</strong
+              >
+              {{ currentPatient.age || '-' }}岁
+            </div>
+            <div class="col-md-3">
+              <strong><i class="fa-regular fa-calendar me-1"></i>日期:</strong>
+              {{ currentPatient.date || '-' }}
+            </div>
+          </div>
+
+          <div class="row bg-light p-3 rounded mb-4">
+            <div class="col-md-12">
+              <strong><i class="fa-solid fa-flask me-1"></i>检查项:</strong> {{
+              getTotalItems() }}项
+            </div>
+          </div>
+
+          <div class="stats-grid" v-if="currentPatient.hasAnalysis">
+            <div class="stat-card">
+              <div class="small text-muted">正常指标</div>
+              <div class="stat-value text-success">
+                {{ getStatusCount('normal') }}
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="small text-muted">异常指标</div>
+              <div class="stat-value text-danger">
+                {{ getStatusCount('abnormal') }}
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="small text-muted">需复查</div>
+              <div class="stat-value text-warning">
+                {{ getStatusCount('review') }}
+              </div>
+            </div>
+          </div>
+
+          <transition name="fade">
+            <div v-if="isBertProcessing" class="progress-container">
+              <div class="d-flex justify-content-between small mb-2">
+                <span
+                  ><i class="fa-solid fa-cog fa-spin me-1"></i
+                  >智能分析进度（规则+BERT）</span
+                >
+                <span class="fw-bold"
+                  >{{ bertProgress.current }}/{{ bertProgress.total }} ({{
+                  bertProgress.percentage }}%)</span
+                >
+              </div>
+              <div class="progress-bar-custom">
+                <div
+                  class="progress-fill"
+                  :style="{width: bertProgress.percentage + '%'}"
+                ></div>
+              </div>
+            </div>
+          </transition>
+
+          <div
+            v-for="(items, gp) in currentPatient.groups"
+            :key="gp"
+            class="mb-4"
+          >
+            <h6 class="text-primary fw-bold border-bottom pb-2">
+              <i class="fa-solid fa-folder-open me-2"></i>{{ gp }}
+            </h6>
+            <table class="med-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%">检查项目</th>
+                  <th style="width: 20%">结果</th>
+                  <th style="width: 25%">参考范围</th>
+                  <th style="width: 15%">AI状态</th>
+                  <th style="width: 15%">置信度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(item, idx) in items" :key="idx">
+                  <td>{{ item.sub }}</td>
+                  <td class="fw-bold">{{ item.res }}</td>
+                  <td class="text-muted small">{{ item.ref || '--' }}</td>
+                  <td>
+                    <span
+                      :class="['badge-status', 'bg-' + (item.status || 'unknown')]"
+                    >
+                      {{ item.statusLabel || '待检测' }}
+                    </span>
+                  </td>
+                  <td class="small">
+                    <span v-if="item.confidence"
+                      >{{ (item.confidence * 100).toFixed(1) }}%</span
+                    >
+                    <span v-else class="text-muted">--</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <transition name="fade">
+            <div v-if="errorMessage" class="alert-box alert-error">
+              <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
+              <div>
+                <strong>错误</strong>
+                <div class="mt-1">{{ errorMessage }}</div>
+              </div>
+            </div>
+          </transition>
+
+          <transition name="fade">
+            <div v-if="successMessage" class="alert-box alert-success">
+              <i class="fa-solid fa-circle-check fa-lg"></i>
+              <div>
+                <strong>成功</strong>
+                <div class="mt-1">{{ successMessage }}</div>
+              </div>
+            </div>
+          </transition>
+
+          <transition name="fade">
+            <div v-if="currentPatient.summary" class="ai-insight">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h6 class="m-0">
+                  <i class="fa-solid fa-robot me-2"></i>AI 综合诊断建议
+                </h6>
+                <div class="btn-group btn-group-sm">
+                  <button type="button" class="btn btn-outline-primary" @click="copySummary">
+                    <i class="fa-regular fa-copy me-1"></i>复制
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    @click="clearSummary"
+                  >
+                    <i class="fa-solid fa-times me-1"></i>清除
+                  </button>
+                </div>
+              </div>
+              <div
+                v-html="renderMD(currentPatient.summary)"
+                class="markdown-content"
+              ></div>
+            </div>
+          </transition>
+
+          <div v-else-if="currentPatient.hasAnalysis" class="ai-insight">
+            <h6><i class="fa-solid fa-lightbulb me-2"></i>智能分析完成</h6>
+            <div class="alert-box alert-info mb-0 mt-2">
+              <i class="fa-solid fa-info-circle fa-lg"></i>
+              <div>
+                <strong>下一步操作</strong>
+                <div class="mt-1">点击右下角绿色按钮，使用LLM生成详细诊断综述</div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="showDebugLog && logs.length > 0" class="log-console">
+            <div class="small fw-bold mb-2">
+              <i class="fa-solid fa-terminal me-1"></i>调试日志
+            </div>
+            <div v-for="(log, idx) in logs" :key="idx" class="log-entry">
+              <span class="log-time">[{{ log.time }}]</span>
+              <span :class="'log-' + log.type">{{ log.message }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div v-else class="text-center mt-5">
+          <i class="fa-regular fa-clipboard fa-4x text-muted mb-3"></i>
+          <h4 class="text-muted">请导入 Excel 数据并选择患者</h4>
+          <p class="mt-3 text-muted">支持导入包含以下字段的Excel文件：</p>
+          <div class="text-start d-inline-block bg-light p-3 rounded">
+            <div>
+              <small
+                ><i class="fa-solid fa-check text-success me-2"></i
+                >姓名/Name</small
+              >
+            </div>
+            <div>
+              <small
+                ><i class="fa-solid fa-check text-success me-2"></i
+                >年龄/Age</small
+              >
+            </div>
+            <div>
+              <small
+                ><i class="fa-solid fa-check text-success me-2"></i
+                >日期/Date</small
+              >
+            </div>
+            <div>
+              <small
+                ><i class="fa-solid fa-check text-success me-2"></i
+                >项目/Project</small
+              >
+            </div>
+            <div>
+              <small
+                ><i class="fa-solid fa-check text-success me-2"></i
+                >子项目/Item</small
+              >
+            </div>
+            <div>
+              <small
+                ><i class="fa-solid fa-check text-success me-2"></i
+                >结果/Result</small
+              >
+            </div>
+            <div>
+              <small
+                ><i class="fa-solid fa-check text-success me-2"></i
+                >参考/Reference (可选)</small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const { createApp, ref, computed, onMounted, onUnmounted } = Vue;
+
+      const app = createApp({
+        setup() {
+          // 配置 - 使用本地地址
+          const DEFAULT_SERVER = window.location.host;
+
+          // 状态
+          const patients = ref({});
+          const currentId = ref(null);
+          const isBertProcessing = ref(false);
+          const isLlmProcessing = ref(false);
+          const connectionStatus = ref("checking");
+          const serverInfo = ref(null);
+          const errorMessage = ref("");
+          const successMessage = ref("");
+          const serverAddress = ref(
+            localStorage.getItem("medical_server_address") || DEFAULT_SERVER
+          );
+          const selectedModel = ref(
+            localStorage.getItem("medical_selected_model") || ""
+          );
+          const streamResponse = ref(
+            localStorage.getItem("medical_stream_response") === "true"
+          );
+          const temperature = ref(
+            parseFloat(localStorage.getItem("medical_temperature") || "0.7")
+          );
+          const showDebugLog = ref(false);
+          const logs = ref([]);
+          const availableModels = ref([]);
+          const ollamaModelsError = ref("");
+
+          const bertProgress = ref({
+            current: 0,
+            total: 0,
+            percentage: 0,
+          });
+
+          // 计算属性
+          const serverHostname = computed(() => {
+            const url = serverAddress.value;
+            if (url.startsWith("http://")) return url.substring(7);
+            if (url.startsWith("https://")) return url.substring(8);
+            return url;
+          });
+
+          const publicApiBase = computed(() => {
+            const url = serverAddress.value;
+            if (url.startsWith("http://") || url.startsWith("https://")) {
+              return url;
+            }
+            // Use http:// for localhost, https:// for remote servers
+            if (url.includes("localhost") || url.startsWith("127.0.0.1") || url.startsWith("192.168.")) {
+              return `http://${url}`;
+            }
+            return `https://${url}`;
+          });
+
+          const currentPatient = computed(() =>
+            currentId.value ? patients.value[currentId.value] : null
+          );
+
+          const connectionStatusText = computed(() => {
+            if (connectionStatus.value === "connected") return "AI 服务在线";
+            if (connectionStatus.value === "disconnected")
+              return "无法连接后端";
+            return "正在检查连接...";
+          });
+
+          // 日志工具
+          const addLog = (message, type = "info") => {
+            const time = new Date().toLocaleTimeString();
+            logs.value.push({ time, message, type });
+            if (logs.value.length > 50) logs.value.shift();
+            console.log(`[${time}] ${message}`);
+          };
+
+          // API配置
+          const apiConfig = computed(() => ({
+            BERT_API: `${publicApiBase.value}/api/predict`,
+            BERT_HEALTH_API: `${publicApiBase.value}/api/health`,
+            BERT_INFO_API: `${publicApiBase.value}/api/info`,
+            OLLAMA_API: `${publicApiBase.value}/api/ollama/generate`,
+            OLLAMA_MODELS_API: `${publicApiBase.value}/api/ollama/models`,
+            BATCH_API: `${publicApiBase.value}/api/batch_predict`,
+            FETCH_TIMEOUT: 30000,
+          }));
+
+          // 工具函数
+          const Utils = {
+            sleep(ms) {
+              return new Promise((resolve) => setTimeout(resolve, ms));
+            },
+
+            async fetchWithTimeout(url, options = {}, timeout = 30000) {
+              const controller = new AbortController();
+              const timeoutId = setTimeout(() => controller.abort(), timeout);
+              try {
+                const response = await fetch(url, {
+                  ...options,
+                  signal: controller.signal,
+                });
+                clearTimeout(timeoutId);
+                return response;
+              } catch (error) {
+                clearTimeout(timeoutId);
+                if (error.name === "AbortError") {
+                  throw new Error("请求超时");
+                }
+                throw error;
+              }
+            },
+
+            findCol(row, candidates) {
+              for (const key of Object.keys(row)) {
+                if (candidates.some((c) => key.includes(c))) return row[key];
+              }
+              return null;
+            },
+
+            showMessage(message, type = "success") {
+              if (type === "success") {
+                successMessage.value = message;
+                errorMessage.value = "";
+                setTimeout(() => (successMessage.value = ""), 3000);
+              } else {
+                errorMessage.value = message;
+                successMessage.value = "";
+                setTimeout(() => (errorMessage.value = ""), 5000);
+              }
+            },
+          };
+
+          // 状态样式
+          const getStatusClass = () => {
+            return connectionStatus.value === "connected"
+              ? "status-connected"
+              : connectionStatus.value === "disconnected"
+              ? "status-disconnected"
+              : "status-checking";
+          };
+
+          const getStatusIcon = () => {
+            if (connectionStatus.value === "connected")
+              return "fa-circle-check";
+            if (connectionStatus.value === "disconnected")
+              return "fa-circle-xmark";
+            return "fa-spinner fa-spin";
+          };
+
+          // 更新API URL
+          const updateApiUrls = () => {
+            localStorage.setItem("medical_server_address", serverAddress.value);
+            addLog(`API地址已更新: ${publicApiBase.value}`, "info");
+            checkHealth();
+          };
+
+          // 重置为默认地址
+          const resetToDefault = () => {
+            serverAddress.value = DEFAULT_SERVER;
+            updateApiUrls();
+            Utils.showMessage("已重置为默认服务器地址", "success");
+          };
+
+          // 健康检查
+          const checkHealth = async () => {
+            try {
+              connectionStatus.value = "checking";
+              addLog("正在检查服务器连接...", "info");
+
+              const res = await Utils.fetchWithTimeout(
+                apiConfig.value.BERT_HEALTH_API,
+                {
+                  method: "GET",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                },
+                5000
+              );
+
+              if (res.ok) {
+                const data = await res.json();
+                connectionStatus.value = "connected";
+                serverInfo.value = data;
+                addLog(
+                  `服务器连接成功 - 设备: ${data.device || "未知"}`,
+                  "success"
+                );
+                Utils.showMessage(
+                  `连接成功！设备: ${data.device || "未知"}`,
+                  "success"
+                );
+              } else {
+                throw new Error(`HTTP ${res.status}`);
+              }
+            } catch (e) {
+              connectionStatus.value = "disconnected";
+              serverInfo.value = null;
+              addLog(`服务器连接失败: ${e.message}`, "error");
+              Utils.showMessage(`无法连接到服务器: ${e.message}`, "error");
+            }
+          };
+
+          // 获取Ollama模型列表
+          const fetchOllamaModels = async () => {
+            try {
+              ollamaModelsError.value = "";
+              addLog("正在获取Ollama模型列表...", "info");
+
+              const res = await Utils.fetchWithTimeout(
+                apiConfig.value.OLLAMA_MODELS_API,
+                {
+                  method: "GET",
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                },
+                10000
+              );
+
+              if (res.ok) {
+                const data = await res.json();
+                if (data.models && Array.isArray(data.models)) {
+                  availableModels.value = data.models.map(model => ({
+                    name: model.name,
+                    size: model.size || 0,
+                    modified_at: model.modified_at || ''
+                  }));
+
+                  addLog(`成功加载 ${availableModels.value.length} 个Ollama模型`, "success");
+
+                  // 如果当前没有选中模型，或选中的模型不在列表中，选择第一个
+                  if (!selectedModel.value || !availableModels.value.find(m => m.name === selectedModel.value)) {
+                    if (availableModels.value.length > 0) {
+                      selectedModel.value = availableModels.value[0].name;
+                      addLog(`自动选择模型: ${selectedModel.value}`, "info");
+                    }
+                  }
+                } else {
+                  throw new Error("返回数据格式错误");
+                }
+              } else {
+                throw new Error(`HTTP ${res.status}`);
+              }
+            } catch (e) {
+              ollamaModelsError.value = `无法获取模型列表: ${e.message}`;
+              addLog(`获取Ollama模型失败: ${e.message}`, "error");
+              console.error("Ollama models fetch error:", e);
+            }
+          };
+
+          // 格式化文件大小
+          const formatSize = (bytes) => {
+            if (!bytes) return "未知大小";
+            const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+            if (bytes === 0) return '0 B';
+            const i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i];
+          };
+
+          // Excel 导入
+          const importExcel = (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            addLog(`开始导入文件: ${file.name}`, "info");
+
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+              try {
+                const bstr = evt.target.result;
+                const wb = XLSX.read(bstr, { type: "binary" });
+                const wsname = wb.SheetNames[0];
+                const ws = wb.Sheets[wsname];
+                const data = XLSX.utils.sheet_to_json(ws);
+
+                if (data.length === 0) {
+                  throw new Error("Excel文件为空");
+                }
+
+                const newPatients = {};
+
+                data.forEach((row) => {
+                  const id =
+                    Utils.findCol(row, ["就诊ID", "ID", "编号"]) ||
+                    `P${Object.keys(newPatients).length + 1}`;
+
+                  if (!newPatients[id]) {
+                    newPatients[id] = {
+                      id: id,
+                      name: Utils.findCol(row, ["姓名", "Name"]) || "未知",
+                      age: Utils.findCol(row, ["年龄", "Age"]),
+                      date: Utils.findCol(row, ["日期", "Date"]),
+                      groups: {},
+                      summary: "",
+                      hasAnalysis: false,
+                    };
+                  }
+
+                  const groupName =
+                    Utils.findCol(row, [
+                      "项目",
+                      "Project",
+                      "类别",
+                      "检查项目",
+                    ]) || "常规检查";
+                  const subItem = Utils.findCol(row, [
+                    "子项目",
+                    "名称",
+                    "Item",
+                    "检查项",
+                  ]);
+                  const result = Utils.findCol(row, [
+                    "结果",
+                    "Result",
+                    "数值",
+                    "检查结果",
+                  ]);
+                  const reference = Utils.findCol(row, [
+                    "参考",
+                    "Reference",
+                    "参考值",
+                    "参考范围",
+                  ]);
+
+                  if (subItem && result) {
+                    if (!newPatients[id].groups[groupName]) {
+                      newPatients[id].groups[groupName] = [];
+                    }
+                    newPatients[id].groups[groupName].push({
+                      sub: subItem,
+                      res: result,
+                      ref: reference,
+                      status: "",
+                      statusLabel: "",
+                      confidence: null,
+                    });
+                  }
+                });
+
+                patients.value = newPatients;
+                const ids = Object.keys(newPatients);
+                if (ids.length > 0) currentId.value = ids[0];
+
+                addLog(`成功导入 ${ids.length} 位患者数据`, "success");
+                Utils.showMessage(
+                  `成功导入 ${ids.length} 位患者数据`,
+                  "success"
+                );
+              } catch (err) {
+                console.error(err);
+                addLog(`Excel解析失败: ${err.message}`, "error");
+                Utils.showMessage("Excel 解析失败，请检查文件格式", "error");
+              }
+            };
+            reader.readAsBinaryString(file);
+            e.target.value = "";
+          };
+
+          // 选择患者
+          const selectPatient = (id) => {
+            currentId.value = id;
+            errorMessage.value = "";
+            successMessage.value = "";
+            addLog(`切换到患者: ${patients.value[id].name}`, "info");
+          };
+
+          // 获取总项目数
+          const getTotalItems = () => {
+            if (!currentPatient.value) return 0;
+            let count = 0;
+            for (const groupName in currentPatient.value.groups) {
+              count += currentPatient.value.groups[groupName].length;
+            }
+            return count;
+          };
+
+          // 统计状态数量
+          const getStatusCount = (status) => {
+            if (!currentPatient.value) return 0;
+            let count = 0;
+            for (const groupName in currentPatient.value.groups) {
+              count += currentPatient.value.groups[groupName].filter(
+                (item) => item.status === status
+              ).length;
+            }
+            return count;
+          };
+
+          // 运行 BERT 分析
+          const runBERT = async () => {
+            if (!currentPatient.value) return;
+            if (connectionStatus.value !== "connected") {
+              Utils.showMessage("请先确保服务器连接正常", "error");
+              return;
+            }
+
+            isBertProcessing.value = true;
+            errorMessage.value = "";
+            bertProgress.value = { current: 0, total: 0, percentage: 0 };
+            addLog("开始智能分析（规则引擎 + BERT模型）...", "info");
+
+            let count = 0;
+            let total = 0;
+            let ruleCount = 0;
+            let bertCount = 0;
+            const groups = currentPatient.value.groups;
+
+            // 计算总项目数
+            for (const groupName in groups) {
+              total += groups[groupName].length;
+            }
+
+            bertProgress.value.total = total;
+            addLog(`共需分析 ${total} 个检查项`, "info");
+            addLog("策略：有参考值用规则判断，无参考值用BERT判断", "info");
+
+            try {
+              for (const groupName in groups) {
+                const items = groups[groupName];
+                for (const item of items) {
+                  const text = `检查项目:${item.sub}, 结果:${
+                    item.res
+                  }, 参考范围:${item.ref || "未知"}`;
+
+                  try {
+                    const res = await Utils.fetchWithTimeout(
+                      apiConfig.value.BERT_API,
+                      {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                          Accept: "application/json",
+                        },
+                        body: JSON.stringify({ text: text }),
+                      }
+                    );
+
+                    if (!res.ok) {
+                      const errorText = await res.text();
+                      throw new Error(`API Error: ${res.status} ${errorText}`);
+                    }
+
+                    const data = await res.json();
+
+                    item.status = data.label;
+                    item.statusLabel = data.label_cn;
+                    item.confidence = data.confidence;
+
+                    // 统计使用的判断方法
+                    if (data.model_version && data.model_version.includes("RuleBased")) {
+                      ruleCount++;
+                    } else {
+                      bertCount++;
+                    }
+
+                    count++;
+
+                    bertProgress.value.current = count;
+                    bertProgress.value.percentage = Math.round(
+                      (count / total) * 100
+                    );
+
+                    await Utils.sleep(50);
+                  } catch (err) {
+                    console.error("Item predict failed:", item.sub, err);
+                    addLog(`项目分析失败: ${item.sub}`, "error");
+                    item.status = "unknown";
+                    item.statusLabel = "失败";
+                    item.confidence = 0;
+                    count++;
+                    bertProgress.value.current = count;
+                    bertProgress.value.percentage = Math.round(
+                      (count / total) * 100
+                    );
+                  }
+                }
+              }
+
+              currentPatient.value.hasAnalysis = true;
+              addLog(`分析完成: ${count}/${total} (规则:${ruleCount}, BERT:${bertCount})`, "success");
+              Utils.showMessage(
+                `已完成 ${count}/${total} 项指标的智能分析 (规则:${ruleCount}, BERT:${bertCount})`,
+                "success"
+              );
+            } catch (err) {
+              addLog(`分析错误: ${err.message}`, "error");
+              Utils.showMessage(`AI 分析过程出错: ${err.message}`, "error");
+            } finally {
+              isBertProcessing.value = false;
+              bertProgress.value = { current: 0, total: 0, percentage: 0 };
+            }
+          };
+
+          // 运行 LLM
+          const runLLM = async () => {
+            if (!currentPatient.value) return;
+            if (connectionStatus.value !== "connected") {
+              Utils.showMessage("请先确保服务器连接正常", "error");
+              return;
+            }
+            if (!currentPatient.value.hasAnalysis) {
+              Utils.showMessage("请先运行BERT分析", "error");
+              return;
+            }
+
+            isLlmProcessing.value = true;
+            errorMessage.value = "";
+            addLog("开始生成LLM诊断建议...", "info");
+
+            // 构造 Prompt
+            let prompt = `你是一个专业的内科医生。请根据以下患者的体检数据生成一份简明扼要的医疗建议。\n`;
+            prompt += `患者信息：${currentPatient.value.name}, ${currentPatient.value.age}岁，检查日期：${currentPatient.value.date}\n\n`;
+
+            const groups = currentPatient.value.groups;
+            let hasAbnormal = false;
+
+            for (const gn in groups) {
+              const abnormalItems = groups[gn].filter(
+                (i) => i.status === "abnormal" || i.status === "review"
+              );
+              if (abnormalItems.length > 0) {
+                hasAbnormal = true;
+                prompt += `【${gn}】异常项：\n`;
+                abnormalItems.forEach((i) => {
+                  prompt += `- ${i.sub}: ${i.res} (参考范围: ${i.ref || "无"})`;
+                  if (i.confidence) {
+                    prompt += ` [置信度: ${(i.confidence * 100).toFixed(1)}%]`;
+                  }
+                  prompt += "\n";
+                });
+              }
+            }
+
+            if (!hasAbnormal) {
+              prompt += "该患者所有检查项目均在正常范围内。\n";
+            }
+
+            prompt += `\n请根据以上数据给出综合诊断分析和生活建议，要求：
+1. 分析可能的原因
+2. 给出就医建议
+3. 提供生活调理建议
+4. 注意事项`;
+
+            try {
+              const requestBody = {
+                model: selectedModel.value,
+                prompt: prompt,
+                stream: streamResponse.value,
+                options: {
+                  temperature: temperature.value,
+                  top_p: 0.9,
+                  top_k: 40,
+                },
+              };
+
+              const res = await Utils.fetchWithTimeout(
+                apiConfig.value.OLLAMA_API,
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                  },
+                  body: JSON.stringify(requestBody),
+                },
+                120000
+              );
+
+              if (!res.ok) {
+                const errorText = await res.text();
+                throw new Error(`Ollama服务错误: ${res.status} ${errorText}`);
+              }
+
+              if (streamResponse.value) {
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder();
+                let fullResponse = "";
+
+                try {
+                  while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    const chunk = decoder.decode(value);
+                    const lines = chunk.split("\n");
+
+                    for (const line of lines) {
+                      if (line.trim()) {
+                        try {
+                          const data = JSON.parse(line);
+                          if (data.response) {
+                            fullResponse += data.response;
+                            currentPatient.value.summary = fullResponse;
+                          }
+                        } catch (e) {
+                          // 忽略JSON解析错误
+                        }
+                      }
+                    }
+                  }
+                  currentPatient.value.summary = fullResponse;
+                  addLog("LLM诊断建议生成完成（流式）", "success");
+                } finally {
+                  reader.releaseLock();
+                }
+              } else {
+                const data = await res.json();
+                currentPatient.value.summary = data.response;
+                addLog("LLM诊断建议生成完成", "success");
+              }
+
+              Utils.showMessage("AI 诊断建议已生成", "success");
+            } catch (err) {
+              addLog(`LLM服务错误: ${err.message}`, "error");
+              Utils.showMessage(`LLM服务错误: ${err.message}`, "error");
+            } finally {
+              isLlmProcessing.value = false;
+            }
+          };
+
+          // 复制诊断建议
+          const copySummary = async () => {
+            if (!currentPatient.value || !currentPatient.value.summary) return;
+
+            try {
+              const text = currentPatient.value.summary.replace(/<[^>]*>/g, "");
+              await navigator.clipboard.writeText(text);
+              Utils.showMessage("诊断建议已复制到剪贴板", "success");
+              addLog("诊断建议已复制", "info");
+            } catch (err) {
+              Utils.showMessage("复制失败，请手动选择文本复制", "error");
+            }
+          };
+
+          // 清除诊断建议
+          const clearSummary = () => {
+            if (currentPatient.value) {
+              currentPatient.value.summary = "";
+              addLog("已清除诊断建议", "info");
+            }
+          };
+
+          // 生成单个患者的CSV数据（优化版）
+          const generatePatientCSV = (patient) => {
+            let csv = '';
+            const separator = '━'.repeat(80);  // 分隔线
+
+            // 标题区域
+            csv += `${separator}\n`;
+            csv += '                        智慧医疗体检报告\n';
+            csv += `${separator}\n\n`;
+
+            // 患者基本信息 - 横向展示
+            csv += '【患者基本信息】\n';
+            csv += `就诊ID：${patient.id || '未知'}\n`;
+            csv += `姓名：${patient.name || '未知'}\n`;
+            csv += `年龄：${patient.age || '未知'}岁\n`;
+            csv += `检查日期：${patient.date || '未知'}\n`;
+
+            // 计算总项数
+            let totalItems = 0;
+            for (const groupName in patient.groups) {
+              totalItems += patient.groups[groupName].length;
+            }
+            csv += `检查项总数：${totalItems}项\n\n`;
+
+            // 分析统计 - 如果已分析
+            if (patient.hasAnalysis) {
+              let normalCount = 0, abnormalCount = 0, reviewCount = 0;
+              for (const groupName in patient.groups) {
+                patient.groups[groupName].forEach(item => {
+                  if (item.status === 'normal') normalCount++;
+                  else if (item.status === 'abnormal') abnormalCount++;
+                  else if (item.status === 'review') reviewCount++;
+                });
+              }
+
+              csv += '【分析统计】\n';
+              csv += `✓ 正常指标：${normalCount}项\n`;
+              csv += `✗ 异常指标：${abnormalCount}项\n`;
+              csv += `⚠ 需复查：${reviewCount}项\n\n`;
+            }
+
+            csv += `${separator}\n\n`;
+
+            // 异常项目详情 - 重点突出
+            const groups = patient.groups;
+            let hasAbnormal = false;
+            const abnormalItems = [];
+
+            for (const groupName in groups) {
+              const items = groups[groupName];
+              for (const item of items) {
+                if (item.status === 'abnormal' || item.status === 'review') {
+                  hasAbnormal = true;
+                  abnormalItems.push({
+                    group: groupName,
+                    item: item
+                  });
+                }
+              }
+            }
+
+            if (hasAbnormal) {
+              csv += '【⚠ 异常项目详情 - 需要关注】\n\n';
+              csv += '序号,项目分类,检查项目,检查结果,参考范围,AI判断,置信度,备注\n';
+
+              abnormalItems.forEach((abnormal, index) => {
+                const item = abnormal.item;
+                const confidence = item.confidence ? `${(item.confidence * 100).toFixed(1)}%` : '--';
+                const remark = item.status === 'review' ? '建议复查' : '超出正常范围';
+                csv += `${index + 1},"${abnormal.group}","${item.sub}","${item.res}","${item.ref || '无'}","${item.statusLabel || ''}","${confidence}","${remark}"\n`;
+              });
+              csv += '\n';
+            } else {
+              csv += '【检查结果】\n';
+              csv += '✓ 所有检查项目均在正常范围内\n\n';
+            }
+
+            csv += `${separator}\n\n`;
+
+            // AI综合诊断建议 - 格式化输出
+            if (patient.summary) {
+              csv += '【AI综合诊断建议】\n\n';
+              const summaryText = patient.summary
+                .replace(/<[^>]*>/g, '')  // 移除HTML标签
+                .replace(/[#*`]/g, '')     // 移除Markdown符号
+                .replace(/\n\n+/g, '\n')   // 合并多个空行
+                .trim();
+
+              // 按行输出，保持格式
+              const lines = summaryText.split('\n');
+              lines.forEach(line => {
+                if (line.trim()) {
+                  csv += `${line.trim()}\n`;
+                }
+              });
+              csv += '\n';
+              csv += `${separator}\n\n`;
+            }
+
+            // 完整检查项目列表 - 按分类展示
+            csv += '【完整检查项目列表】\n\n';
+
+            for (const groupName in groups) {
+              const items = groups[groupName];
+              if (items.length > 0) {
+                csv += `▼ ${groupName}\n`;
+                csv += '序号,检查项目,检查结果,参考范围,AI判断,置信度\n';
+
+                items.forEach((item, index) => {
+                  const confidence = item.confidence ? `${(item.confidence * 100).toFixed(1)}%` : '--';
+                  const status = item.statusLabel || '待检测';
+                  const statusSymbol = item.status === 'normal' ? '✓' :
+                                      item.status === 'abnormal' ? '✗' :
+                                      item.status === 'review' ? '⚠' : '○';
+                  csv += `${index + 1},"${item.sub}","${item.res}","${item.ref || '无'}","${statusSymbol} ${status}","${confidence}"\n`;
+                });
+                csv += '\n';
+              }
+            }
+
+            csv += `${separator}\n`;
+            csv += '报告结束\n';
+            csv += `生成时间：${new Date().toLocaleString('zh-CN')}\n`;
+            csv += `${separator}\n`;
+
+            return csv;
+          };
+
+          // 导出当前患者
+          const exportCurrentPatient = () => {
+            if (!currentPatient.value) return;
+
+            try {
+              let csv = '\uFEFF'; // UTF-8 BOM
+              csv += generatePatientCSV(currentPatient.value);
+
+              const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+              const link = document.createElement('a');
+              const url = URL.createObjectURL(blob);
+
+              const filename = `医疗报告_${currentPatient.value.name || '未知'}_${currentPatient.value.id || ''}_${new Date().toISOString().slice(0,10)}.csv`;
+
+              link.setAttribute('href', url);
+              link.setAttribute('download', filename);
+              link.style.visibility = 'hidden';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+
+              addLog(`CSV导出成功: ${filename}`, "success");
+              Utils.showMessage("当前患者报告已导出", "success");
+            } catch (err) {
+              console.error("导出失败:", err);
+              addLog(`导出失败: ${err.message}`, "error");
+              Utils.showMessage(`导出失败: ${err.message}`, "error");
+            }
+          };
+
+          // 批量导出所有患者
+          const exportAllPatients = () => {
+            if (Object.keys(patients.value).length === 0) {
+              Utils.showMessage("没有患者数据可导出", "error");
+              return;
+            }
+
+            try {
+              let csv = '\uFEFF'; // UTF-8 BOM
+              const separator = '━'.repeat(80);
+
+              // 批量导出标题
+              csv += `${separator}\n`;
+              csv += '                    医疗体检报告 - 批量导出\n';
+              csv += `${separator}\n\n`;
+              csv += `导出时间：${new Date().toLocaleString('zh-CN')}\n`;
+              csv += `患者总数：${Object.keys(patients.value).length}人\n\n`;
+
+              // 汇总统计表格
+              csv += '【批量汇总统计】\n\n';
+              csv += '序号,就诊ID,姓名,年龄,检查日期,总项数,正常,异常,需复查,已分析\n';
+
+              let patientIndex = 1;
+              for (const id in patients.value) {
+                const patient = patients.value[id];
+                let totalItems = 0, normalCount = 0, abnormalCount = 0, reviewCount = 0;
+
+                for (const groupName in patient.groups) {
+                  totalItems += patient.groups[groupName].length;
+                  patient.groups[groupName].forEach(item => {
+                    if (item.status === 'normal') normalCount++;
+                    else if (item.status === 'abnormal') abnormalCount++;
+                    else if (item.status === 'review') reviewCount++;
+                  });
+                }
+
+                csv += `${patientIndex},"${patient.id || '-'}","${patient.name || '-'}","${patient.age || '-'}岁","${patient.date || '-'}",`;
+                csv += `${totalItems}项,${normalCount}项,${abnormalCount}项,${reviewCount}项,${patient.hasAnalysis ? '是' : '否'}\n`;
+                patientIndex++;
+              }
+              csv += '\n';
+              csv += `${separator}\n`;
+              csv += `${'═'.repeat(80)}\n\n`;
+
+              // 每个患者的详细报告
+              patientIndex = 1;
+              for (const id in patients.value) {
+                const patient = patients.value[id];
+                csv += `\n\n`;
+                csv += `${'═'.repeat(80)}\n`;
+                csv += `患者 ${patientIndex}/${Object.keys(patients.value).length}：${patient.name || '未知'} (ID: ${patient.id || '-'})\n`;
+                csv += `${'═'.repeat(80)}\n\n`;
+
+                csv += generatePatientCSV(patient);
+                patientIndex++;
+              }
+
+              const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+              const link = document.createElement('a');
+              const url = URL.createObjectURL(blob);
+
+              const filename = `医疗报告_批量导出_${Object.keys(patients.value).length}人_${new Date().toISOString().slice(0,10)}.csv`;
+
+              link.setAttribute('href', url);
+              link.setAttribute('download', filename);
+              link.style.visibility = 'hidden';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+
+              addLog(`批量导出成功: ${Object.keys(patients.value).length}位患者`, "success");
+              Utils.showMessage(`已导出${Object.keys(patients.value).length}位患者的报告`, "success");
+            } catch (err) {
+              console.error("批量导出失败:", err);
+              addLog(`批量导出失败: ${err.message}`, "error");
+              Utils.showMessage("批量导出失败，请重试", "error");
+            }
+          };
+
+          // Markdown渲染
+          const renderMD = (text) => {
+            try {
+              return marked.parse(text || "");
+            } catch (e) {
+              return text;
+            }
+          };
+
+          // 保存配置
+          const saveConfig = () => {
+            localStorage.setItem("medical_selected_model", selectedModel.value);
+            localStorage.setItem(
+              "medical_stream_response",
+              streamResponse.value.toString()
+            );
+            localStorage.setItem(
+              "medical_temperature",
+              temperature.value.toString()
+            );
+          };
+
+          // 监听配置变化
+          const watchConfig = () => {
+            const unwatch1 = Vue.watch(selectedModel, saveConfig);
+            const unwatch2 = Vue.watch(streamResponse, saveConfig);
+            const unwatch3 = Vue.watch(temperature, saveConfig);
+            return () => {
+              unwatch1();
+              unwatch2();
+              unwatch3();
+            };
+          };
+
+          // 生命周期
+          onMounted(() => {
+            checkHealth();
+            fetchOllamaModels();  // 获取Ollama模型列表
+            watchConfig();
+
+            // 定期健康检查
+            const healthCheckInterval = setInterval(checkHealth, 60000);
+
+            // 键盘快捷键
+            const handleKeyPress = (e) => {
+              if (e.ctrlKey && e.key === "l") {
+                e.preventDefault();
+                showDebugLog.value = !showDebugLog.value;
+              }
+            };
+            window.addEventListener("keydown", handleKeyPress);
+
+            onUnmounted(() => {
+              clearInterval(healthCheckInterval);
+              window.removeEventListener("keydown", handleKeyPress);
+            });
+
+            addLog("应用初始化完成", "info");
+          });
+
+          return {
+            patients,
+            currentId,
+            currentPatient,
+            connectionStatus,
+            connectionStatusText,
+            serverInfo,
+            isBertProcessing,
+            isLlmProcessing,
+            errorMessage,
+            successMessage,
+            serverAddress,
+            serverHostname,
+            publicApiBase,
+            selectedModel,
+            streamResponse,
+            temperature,
+            bertProgress,
+            showDebugLog,
+            logs,
+            availableModels,
+            ollamaModelsError,
+            importExcel,
+            selectPatient,
+            runBERT,
+            runLLM,
+            renderMD,
+            checkHealth,
+            fetchOllamaModels,
+            formatSize,
+            updateApiUrls,
+            resetToDefault,
+            getStatusCount,
+            getTotalItems,
+            copySummary,
+            clearSummary,
+            exportCurrentPatient,
+            exportAllPatients,
+            getStatusClass,
+            getStatusIcon,
+          };
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
